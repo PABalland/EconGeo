@@ -1,0 +1,20 @@
+Package: EconGeo
+Title: Computing Key Indicators of the Spatial Distribution of Economic
+    Activities
+Version: 1.1
+Author: Pierre-Alexandre Balland <p.balland@uu.nl>
+Maintainer: Pierre-Alexandre Balland <p.balland@uu.nl>
+Description: Functions to compute a series of indices commonly used to describe
+    the location, distribution, spatial organization, and complexity of economic
+    activities. Most of the function uses matrix calculus and use bipartite
+    (incidence) matrices consisting of region - industry pairs.
+URL: https://github.com/PABalland/EconGeo
+Depends:
+    R (>= 3.3.0)
+Imports:
+    reshape2,
+    Matrix
+License: GPL-2 | GPL-3 [expanded from: GPL]
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1.9000
