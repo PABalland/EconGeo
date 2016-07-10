@@ -7,7 +7,7 @@ Maintainer: Pierre-Alexandre Balland <p.balland@uu.nl>
 Description: Functions to compute a series of indices commonly used to describe
     the location, distribution, spatial organization, and complexity of economic
     activities. Most of the function uses matrix calculus and use bipartite
-    (incidence) matrices consisting of region - industry pairs.
+    (incidence) matrices consisting of region - industry pairs. Enjoy !
 URL: https://github.com/PABalland/EconGeo
 Depends:
     R (>= 3.3.0)
