@@ -12,7 +12,6 @@ URL: https://github.com/PABalland/EconGeo
 Depends:
     R (>= 3.3.0)
 Imports:
-    reshape2,
     Matrix
 License: GPL-2 | GPL-3 [expanded from: GPL]
 Encoding: UTF-8
