@@ -4,13 +4,13 @@ Title: Computing Key Indicators of the Spatial Distribution of Economic
 Version: 1.2
 Author: Pierre-Alexandre Balland <p.balland@uu.nl>
 Maintainer: Pierre-Alexandre Balland <p.balland@uu.nl>
-Description: Functions to compute a series of indices commonly used to describe
-    the location, distribution, spatial organization, and complexity of economic
-    activities. Most of the function uses matrix calculus and use bipartite
-    (incidence) matrices consisting of region - industry pairs.
+Description: Functions to compute a series of indices commonly used in economic geography &
+     urban economics to describe the location, distribution, spatial organization, and
+     complexity of economic activities. Most of the functions use matrix calculus and are
+     based on bipartite (incidence) matrices consisting of region - industry pairs.
 URL: https://github.com/PABalland/EconGeo
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.3.1)
 Imports:
     Matrix
 License: GPL-2 | GPL-3 [expanded from: GPL]

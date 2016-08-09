@@ -2,7 +2,8 @@
 #'
 #' This function creates regular data frames with three columns (regions, industries, count) from (incidence) matrices (wide to long format) using the reshape2 package
 #' @param mat An incidence matrix with regions in rows and industries in columns (or the other way around)
-#' @keywords adjacency matrix, edge lists, reshape package, economics, geography, economic geography
+#' @keywords data.management
+#' @usage get.list (data)
 #' @export
 #' @examples
 #' ## generate a region - industry matrix
