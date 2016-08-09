@@ -1,16 +1,16 @@
-#' Compute the Shannon entropy index from regions - industries matrices 
+#' Compute the Shannon entropy index from regions - industries matrices
 #'
-#' This function computes the Shannon entropy index from regions - industries matrices from (incidence) regions - industries matrices 
+#' This function computes the Shannon entropy index from regions - industries matrices from (incidence) regions - industries matrices
 #' @param mat An incidence matrix with regions in rows and industries in columns
-#' @keywords location quotient, relative comparative advantage, entropy
+#' @keywords diversity
 #' @export
 #' @examples
-#' ## generate a region - industry matrix 
+#' ## generate a region - industry matrix
 #' set.seed(31)
-#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 #' rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 #' colnames(mat) <- c ("I1", "I2", "I3", "I4")
-#' 
+#'
 #' ## run the function
 #' entropy (mat)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}

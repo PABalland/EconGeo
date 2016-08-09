@@ -1,6 +1,6 @@
-#' Compute the Hoover curve from regional counts in population and industry
+#' Compute the Hoover Gini from regional counts in population and industry
 #'
-#' This function computes the Hoover curve (locational Lorenz curve) from regional shares in population and industry
+#' This function computes the Hoover Gini from regional shares in population and industry
 #' @param ind A vector of industrial regional count
 #' @param pop A vector of population regional count
 #' @keywords concentration inequality
@@ -11,23 +11,21 @@
 #' pop <- c(5, 10, 10, 25, 30)
 #'
 #' ## run the function
-#' Hoover.curve (ind, pop)
+#' Hoover.Gini (ind, pop)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{location.quotient}}, \code{\link{locational.Gini}}
 #' @references Hoover, E.M. (1936) The Measurement of Industrial Localization, \emph{The Review of Economics and Statistics} \strong{18} (1): 162-171
 
-Hoover.curve <- function(ind, pop) {
-  ind <- c(0, ind)
-  pop <- c(0, pop)
+Hoover.Gini <- function(ind, pop) {
+  ind <- c(ind)
+  pop <- c(pop)
   oind <- order(ind)
   ind <- ind[oind]
   pop <- pop[oind]
   cind <- cumsum(ind)/max(cumsum(ind))
   cpop <- cumsum(pop)/max(cumsum(pop))
-  plot (cpop, cind, type = "l", main = "Hoover curve",
-  xlab="Cumulative distribution of population shares", ylab="Cumulative distribution of industry shares",
-  xlim=c(0, 1), ylim=c(0, 1))
-  return(abline (0,1, col = "red"))
-}
+  nn = length (cind)
+  sum(cind[-1] * cpop[-nn]) - sum(cind[-nn] * cpop[-1])
 
+}
 

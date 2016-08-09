@@ -1,7 +1,7 @@
 Package: EconGeo
 Title: Computing Key Indicators of the Spatial Distribution of Economic
     Activities
-Version: 1.1
+Version: 1.2
 Author: Pierre-Alexandre Balland <p.balland@uu.nl>
 Maintainer: Pierre-Alexandre Balland <p.balland@uu.nl>
 Description: Functions to compute a series of indices commonly used to describe
