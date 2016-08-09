@@ -1,38 +1,38 @@
-#' Compute location quotients from regions - industries matrices 
+#' Compute location quotients from regions - industries matrices
 #'
 #' This function computes location quotients from (incidence) regions - industries matrices. The numerator is the share of a given industry in a given region. The denominator is the share of a this industry in a larger economy (overall country for instance). This index is also refered to as the index of Revealed Comparative Advantage (RCA) following Ballasa (1965), or the Hoover-Balassa index.
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param binary Logical; shall the returned output be a dichotomized version (0/1) of the location quotient? Defaults to FALSE (the full values of the location quotient will be returned), but can be set to TRUE (location quotient values above 1 will be set to 1 & location quotient values below 1 will be set to 0)
-#' @keywords location quotient, relative comparative advantage 
+#' @keywords specialization concentration
 #' @export
 #' @examples
-#' ## generate a region - industry matrix 
+#' ## generate a region - industry matrix
 #' set.seed(31)
-#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 #' rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 #' colnames(mat) <- c ("I1", "I2", "I3", "I4")
-#' 
+#'
 #' ## run the function
 #' location.quotient (mat)
 #' location.quotient (mat, binary = TRUE)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{RCA}}
-#' @references Balassa, B. (1965) Trade Liberalization and Revealed Comparative Advantage, \emph{The Manchester School} \strong{33}: 99-123. 
+#' @references Balassa, B. (1965) Trade Liberalization and Revealed Comparative Advantage, \emph{The Manchester School} \strong{33}: 99-123.
 
 location.quotient <- function(mat, binary = FALSE) {
   share_tech_city <- mat / rowSums (mat)
   share_tech_total <- colSums (mat) / sum (mat)
   if (binary) {
     LQ <- t(t(share_tech_city)/ share_tech_total)
-    LQ[is.na(LQ)] <- 0 
+    LQ[is.na(LQ)] <- 0
     LQ[LQ < 1] <- 0
     LQ[LQ > 1] <- 1
   } else {
   LQ <- t(t(share_tech_city)/ share_tech_total)
-  LQ[is.na(LQ)] <- 0 
+  LQ[is.na(LQ)] <- 0
   }
   return (LQ)
-  
+
 }
 
 
