@@ -27,7 +27,7 @@
 #' \cr
 #' Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamics and Relatedness in Bio-Tech Cities, \emph{Research Policy} \strong{43} (1): 107-114 \cr
 #' \cr
-#' Steijn, M.P.A. (2016) /Improvement on the association strength: implementing a probabilistic measure based on combinations without repetition, \emph{Working Paper, Utrecht University}
+#' Steijn, M.P.A. (2016) Improvement on the association strength: implementing a probabilistic measure based on combinations without repetition, \emph{Working Paper, Utrecht University}
 
 "relatedness" <- function(mat, method = "prob") {
 
