@@ -12,41 +12,7 @@ growth.list.ind(mat1, mat2, mat3, mat4, mat5, mat6, mat7, mat8, mat9, mat10,
 
 \item{mat2}{An incidence matrix with regions in rows and industries in columns (period 2 - mandatory)}
 
-\item{mat3}{An incidence matrix with regions in rows and industries in columns (period 3 - optional)}
-
-\item{mat4}{An incidence matrix with regions in rows and industries in columns (period 4 - optional)}
-
-\item{mat5}{An incidence matrix with regions in rows and industries in columns (period 5 - optional)}
-
-\item{mat6}{An incidence matrix with regions in rows and industries in columns (period 6 - optional)}
-
-\item{mat7}{An incidence matrix with regions in rows and industries in columns (period 7 - optional)}
-
-\item{mat8}{An incidence matrix with regions in rows and industries in columns (period 8 - optional)}
-
-\item{mat9}{An incidence matrix with regions in rows and industries in columns (period 9 - optional)}
-
-\item{mat10}{An incidence matrix with regions in rows and industries in columns (period 10 - optional)}
-
-\item{mat11}{An incidence matrix with regions in rows and industries in columns (period 11 - mandatory)}
-
-\item{mat12}{An incidence matrix with regions in rows and industries in columns (period 12 - mandatory)}
-
-\item{mat13}{An incidence matrix with regions in rows and industries in columns (period 13 - optional)}
-
-\item{mat14}{An incidence matrix with regions in rows and industries in columns (period 14 - optional)}
-
-\item{mat15}{An incidence matrix with regions in rows and industries in columns (period 15 - optional)}
-
-\item{mat16}{An incidence matrix with regions in rows and industries in columns (period 16 - optional)}
-
-\item{mat17}{An incidence matrix with regions in rows and industries in columns (period 17 - optional)}
-
-\item{mat18}{An incidence matrix with regions in rows and industries in columns (period 18 - optional)}
-
-\item{mat19}{An incidence matrix with regions in rows and industries in columns (period 19 - optional)}
-
-\item{mat20}{An incidence matrix with regions in rows and industries in columns (period 20 - optional)}
+\item{mat...}{An incidence matrix with regions in rows and industries in columns (period ... - optional)}
 }
 \description{
 This function generates a data frame of industrial growth in regions from multiple regions - industries matrices (same matrix composition for the different periods). In this function, the maximum number of periods is limited to 20.
@@ -54,7 +20,7 @@ This function generates a data frame of industrial growth in regions from multip
 \examples{
 ## generate a first region - industry matrix with full count (period 1)
 set.seed(31)
-mat1 <- matrix(sample(0:10,20,replace=T), ncol = 4) 
+mat1 <- matrix(sample(0:10,20,replace=T), ncol = 4)
 rownames(mat1) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat1) <- c ("I1", "I2", "I3", "I4")
 
@@ -90,8 +56,5 @@ Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamic
 \seealso{
 \code{\link{growth}}, \code{\link{exit}}, \code{\link{exit.list}}
 }
-\keyword{co-occurences}
-\keyword{density}
-\keyword{normalized}
-\keyword{relatedness}
+\keyword{growth}
 

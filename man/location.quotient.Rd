@@ -15,9 +15,9 @@ location.quotient(mat, binary = FALSE)
 This function computes location quotients from (incidence) regions - industries matrices. The numerator is the share of a given industry in a given region. The denominator is the share of a this industry in a larger economy (overall country for instance). This index is also refered to as the index of Revealed Comparative Advantage (RCA) following Ballasa (1965), or the Hoover-Balassa index.
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -34,9 +34,6 @@ Balassa, B. (1965) Trade Liberalization and Revealed Comparative Advantage, \emp
 \seealso{
 \code{\link{RCA}}
 }
-\keyword{advantage}
-\keyword{comparative}
-\keyword{location}
-\keyword{quotient,}
-\keyword{relative}
+\keyword{concentration}
+\keyword{specialization}
 

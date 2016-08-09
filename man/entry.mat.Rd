@@ -15,13 +15,15 @@ entry.mat(mat1, mat2)
 This function generates a matrix of entry events from two regions - industries matrices (same matrix composition from two different periods)
 }
 \examples{
-## generate a first region - industry matrix in which cells represent the presence/absence of a RCA (period 1)
+## generate a first region - industry matrix in which cells represent the presence/absence
+## of a RCA (period 1)
 set.seed(31)
-mat1 <- matrix(sample(0:1,20,replace=T), ncol = 4) 
+mat1 <- matrix(sample(0:1,20,replace=T), ncol = 4)
 rownames(mat1) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat1) <- c ("I1", "I2", "I3", "I4")
 
-## generate a second region - industry matrix in which cells represent the presence/absence of a RCA (period 2)
+## generate a second region - industry matrix in which cells represent the presence/absence
+## of a RCA (period 2)
 mat2 <- mat1
 mat2[3,1] <- 1
 
@@ -40,8 +42,5 @@ Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamic
 \seealso{
 \code{\link{exit}}, \code{\link{entry.list}}, \code{\link{exit.list}}
 }
-\keyword{co-occurences}
-\keyword{density}
-\keyword{normalized}
-\keyword{relatedness}
+\keyword{diversification}
 

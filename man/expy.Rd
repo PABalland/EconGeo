@@ -15,9 +15,9 @@ expy(mat, vec)
 This function computes the expy index of regions from (incidence) regions - industries matrices, as proposed by Hausmann, Hwang & Rodrik (2007). The index is a measure of the productivity level associated with a region's specialization pattern.
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -37,9 +37,6 @@ Hausmann, R., Hwang, J. & Rodrik, D. (2007) What you export matters, \emph{Journ
 \seealso{
 \code{\link{location.quotient}}
 }
-\keyword{advantage}
-\keyword{comparative}
-\keyword{location}
-\keyword{quotient,}
-\keyword{revealed}
+\keyword{diversity}
+\keyword{specialization}
 

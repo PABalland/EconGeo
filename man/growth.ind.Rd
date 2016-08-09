@@ -17,7 +17,7 @@ This function generates a matrix of industrial growth by industries from two reg
 \examples{
 ## generate a first region - industry matrix with full count (period 1)
 set.seed(31)
-mat1 <- matrix(sample(0:10,20,replace=T), ncol = 4) 
+mat1 <- matrix(sample(0:10,20,replace=T), ncol = 4)
 rownames(mat1) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat1) <- c ("I1", "I2", "I3", "I4")
 
@@ -40,8 +40,5 @@ Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamic
 \seealso{
 \code{\link{exit}}, \code{\link{entry.list}}, \code{\link{exit.list}}
 }
-\keyword{co-occurences}
-\keyword{density}
-\keyword{normalized}
-\keyword{relatedness}
+\keyword{growth}
 

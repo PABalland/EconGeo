@@ -17,7 +17,7 @@ This function computes a simple measure of diversity of regions by counting the 
 \examples{
 ## generate a region - industry matrix with full count
 set.seed(31)
-mat <- matrix(sample(0:10,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:10,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -26,7 +26,7 @@ diversity (mat, RCA = TRUE)
 
 ## generate a region - industry matrix in which cells represent the presence/absence of a RCA
 set.seed(31)
-mat <- matrix(sample(0:1,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:1,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -43,5 +43,4 @@ Balland, P.A. and Rigby, D. (2016) The geography of complex knowledge, \emph{Eco
 \code{\link{ubiquity}}, \code{\link{location.quotient}}
 }
 \keyword{diversity}
-\keyword{ubiquity}
 

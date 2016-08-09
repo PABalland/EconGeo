@@ -4,7 +4,7 @@
 \alias{get.list}
 \title{Create regular data frames from regions - industries matrices}
 \usage{
-get.list(mat)
+get.list (data)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns (or the other way around)}
@@ -13,12 +13,11 @@ get.list(mat)
 This function creates regular data frames with three columns (regions, industries, count) from (incidence) matrices (wide to long format) using the reshape2 package
 }
 \examples{
-## generate a region - industry data frame
+## generate a region - industry matrix
 set.seed(31)
-region <- c("R1", "R1", "R1", "R1", "R2", "R2", "R3", "R4", "R5")
-industry <- c("I1", "I2", "I3", "I4", "I1", "I2", "I1", "I1", "I3")
-data <- data.frame (region, industry)
-data$count <- 1
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
+rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
 ## run the function
 get.list (mat)
@@ -29,14 +28,5 @@ Pierre-Alexandre Balland \email{p.balland@uu.nl}
 \seealso{
 \code{\link{get.matrix}}
 }
-\keyword{adjacency}
-\keyword{economic}
-\keyword{economics,}
-\keyword{edge}
-\keyword{geography}
-\keyword{geography,}
-\keyword{lists,}
-\keyword{matrix,}
-\keyword{package,}
-\keyword{reshape}
+\keyword{data.management}
 

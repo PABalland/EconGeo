@@ -4,7 +4,7 @@
 \alias{get.matrix}
 \title{Create regions - industries matrices from regular data frames}
 \usage{
-get.matrix(data, sparse = FALSE)
+get.matrix (data)
 }
 \arguments{
 \item{data}{is a data frame with three columns (regions, industries, count)}
@@ -32,16 +32,5 @@ Pierre-Alexandre Balland \email{p.balland@uu.nl}
 \seealso{
 \code{\link{get.list}}
 }
-\keyword{Matrix}
-\keyword{adjacency}
-\keyword{economic}
-\keyword{economics,}
-\keyword{edge}
-\keyword{geography}
-\keyword{geography,}
-\keyword{lists,}
-\keyword{matrix,}
-\keyword{package,}
-\keyword{reshape}
-\keyword{sparse}
+\keyword{data.management}
 

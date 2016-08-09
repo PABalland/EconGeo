@@ -13,9 +13,9 @@ entropy(mat)
 This function computes the Shannon entropy index from regions - industries matrices from (incidence) regions - industries matrices
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -33,10 +33,5 @@ Frenken, K., Van Oort, F. and Verburg, T. (2007) Related variety, unrelated vari
 \seealso{
 \code{\link{diversity}}
 }
-\keyword{advantage,}
-\keyword{comparative}
-\keyword{entropy}
-\keyword{location}
-\keyword{quotient,}
-\keyword{relative}
+\keyword{diversity}
 

@@ -17,9 +17,9 @@ co.occurence(mat, diagonal = FALSE, list = FALSE)
 This function computes the number of co-occurences between industry pairs from an incidence (industry - event) matrix
 }
 \examples{
-## generate a region - events matrix 
+## generate a region - events matrix
 set.seed(31)
-mat <- matrix(sample(0:1,20,replace=T), ncol = 5) 
+mat <- matrix(sample(0:1,20,replace=T), ncol = 5)
 rownames(mat) <- c ("I1", "I2", "I3", "I4")
 colnames(mat) <- c("US1", "US2", "US3", "US4", "US5")
 
@@ -43,6 +43,5 @@ Boschma, R., Balland, P.A. and Kogler, D. (2015) Relatedness and Technological C
 \seealso{
 \code{\link{relatedness}}, \code{\link{relatedness.density}}
 }
-\keyword{co-occurences}
 \keyword{relatedness}
 

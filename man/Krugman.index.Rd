@@ -13,9 +13,9 @@ Krugman.index(mat)
 This function computes the Krugman index from regions - industries matrices. This index is often referred to as the Krugman specialisation index and measures the distance between the distributions of industry shares in a region and at a more aggregated level (country for instance).
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -31,6 +31,5 @@ Krugman P. (1991) \emph{Geography and Trade}, MIT Press, Cambridge
 \seealso{
 \code{\link{average.location.quotient}}
 }
-\keyword{Krugman}
-\keyword{index}
+\keyword{specialization}
 
