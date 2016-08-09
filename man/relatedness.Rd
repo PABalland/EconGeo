@@ -15,9 +15,10 @@ relatedness(mat, method = "prob")
 This function computes the relatedness between entities (industries, technologies, ...) from their co-occurence (adjacency) matrix. Different normalization procedures are proposed following van Eck and Waltman (2009): association strength, cosine, Jaccard, and an adapted version of the association strength that we refer to as probability index.
 }
 \examples{
-## generate an industry - industry matrix in which cells give the number of co-occurences between two industries
+## generate an industry - industry matrix in which cells give the number of co-occurences
+## between two industries
 set.seed(31)
-mat <- matrix(sample(0:10,36,replace=T), ncol = 6) 
+mat <- matrix(sample(0:10,36,replace=T), ncol = 6)
 mat[lower.tri(mat, diag = TRUE)] <- t(mat)[lower.tri(t(mat), diag = TRUE)]
 rownames(mat) <- c ("I1", "I2", "I3", "I4", "I5", "I6")
 colnames(mat) <- c ("I1", "I2", "I3", "I4", "I5", "I6")
@@ -36,12 +37,12 @@ Mathieu Steijn \email{M.P.A.Steijn@uu.nl}
 \references{
 van Eck, N.J. and Waltman, L. (2009) How to normalize cooccurrence data? An analysis of some well-known similarity measures, \emph{Journal of the American Society for Information Science and Technology} \strong{60} (8): 1635-1651 \cr
 \cr
-Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamics and Relatedness in Bio-Tech Cities, \emph{Research Policy} \strong{43} (1): 107-114
+Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamics and Relatedness in Bio-Tech Cities, \emph{Research Policy} \strong{43} (1): 107-114 \cr
+\cr
+Steijn, M.P.A. (2016) /Improvement on the association strength: implementing a probabilistic measure based on combinations without repetition, \emph{Working Paper, Utrecht University}
 }
 \seealso{
 \code{\link{relatedness.density}}, \code{\link{co.occurence}}
 }
-\keyword{co-occurences}
-\keyword{normalized}
 \keyword{relatedness}
 

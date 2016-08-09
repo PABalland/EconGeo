@@ -17,9 +17,9 @@ weighted.avg(mat, vec, reg = T)
 This function computes a weighted average of regions or industries from (incidence) regions - industries matrices.
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -28,7 +28,7 @@ vec <- c (5, 10, 15, 25, 50)
 ## run the function
 weighted.avg (mat, vec, reg = F)
 
-## a vector for industries will be used to computed the weighted average of regions 
+## a vector for industries will be used to computed the weighted average of regions
 vec <- c (5, 10, 15, 25)
 ## run the function
 weighted.avg (mat, vec, reg = T)
@@ -39,9 +39,6 @@ Pierre-Alexandre Balland \email{p.balland@uu.nl}
 \seealso{
 \code{\link{location.quotient}}
 }
-\keyword{advantage}
-\keyword{comparative}
-\keyword{location}
-\keyword{quotient,}
-\keyword{revealed}
+\keyword{diversity}
+\keyword{specialization}
 

@@ -17,7 +17,7 @@ modular.complexity(mat, sparse = FALSE, list = FALSE)
 This function computes a measure of modular complexity of patent documents from technological classes - patents (incidence) matrices
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
 mat <- matrix(sample(0:1,30,replace=T), ncol = 5)
 rownames(mat) <- c ("T1", "T2", "T3", "T4", "T5", "T6")
@@ -26,7 +26,7 @@ colnames(mat) <- c ("US1", "US2", "US3", "US4", "US5")
 ## run the function
 modular.complexity (mat)
 
-## generate a region - industry sparse matrix 
+## generate a region - industry sparse matrix
 library (Matrix)
 
 ## run the function
@@ -49,6 +49,4 @@ Fleming, L. and Sorenson, O. (2001) Technology as a complex adaptive system: evi
 \code{\link{ease.recombination}}, \code{\link{TCI}}, \code{\link{MORt}}
 }
 \keyword{complexity}
-\keyword{interdependencies}
-\keyword{modular}
 

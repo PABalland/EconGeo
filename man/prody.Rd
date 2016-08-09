@@ -15,9 +15,9 @@ prody(mat, vec)
 This function computes the prody index of industries from (incidence) regions - industries matrices, as proposed by Hausmann, Hwang & Rodrik (2007). The index gives an associated income level for each industry. It represents a weighted average of per-capita GDPs (but GDP can be replaced by R&D, education...), where the weights correspond to the revealed comparative advantage of each region in a given industry (or sector, technology, ...).
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -37,9 +37,6 @@ Hausmann, R., Hwang, J. & Rodrik, D. (2007) What you export matters, \emph{Journ
 \seealso{
 \code{\link{location.quotient}}
 }
-\keyword{advantage}
-\keyword{comparative}
-\keyword{location}
-\keyword{quotient,}
-\keyword{revealed}
+\keyword{complexity}
+\keyword{concentration}
 

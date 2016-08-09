@@ -15,15 +15,18 @@ relatedness.density.int(mat, relatedness)
 This function computes the relatedness density between regions and industries that are part of the regional portfolio from regions - industries (incidence) matrices and industries - industries (adjacency) matrices
 }
 \examples{
-## generate a region - industry matrix in which cells represent the presence/absence of a RCA
+## generate a region - industry matrix in which cells represent the presence/absence
+## of a RCA
 set.seed(31)
-mat <- matrix(sample(0:1,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:1,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
-## generate an industry - industry matrix in which cells indicate if two industries are related (1) or not (0)
-relatedness <- matrix(sample(0:1,16,replace=T), ncol = 4) 
-relatedness[lower.tri(relatedness, diag = TRUE)] <- t(relatedness)[lower.tri(t(relatedness), diag = TRUE)]
+## generate an industry - industry matrix in which cells indicate if two industries are
+## related (1) or not (0)
+relatedness <- matrix(sample(0:1,16,replace=T), ncol = 4)
+relatedness[lower.tri(relatedness, diag = TRUE)] <- t(relatedness)[lower.tri(t(relatedness),
+diag = TRUE)]
 rownames(relatedness) <- c ("I1", "I2", "I3", "I4")
 colnames(relatedness) <- c ("I1", "I2", "I3", "I4")
 
@@ -41,8 +44,5 @@ Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamic
 \seealso{
 \code{\link{relatedness}}, \code{\link{co.occurence}}
 }
-\keyword{co-occurences}
-\keyword{density}
-\keyword{normalized}
 \keyword{relatedness}
 
