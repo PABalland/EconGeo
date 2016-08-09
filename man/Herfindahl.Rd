@@ -13,9 +13,9 @@ Herfindahl(mat)
 This function computes the Herfindahl index from regions - industries matrices from (incidence) regions - industries matrices. This index is also known as the  Herfindahl-Hirschman index.
 }
 \examples{
-## generate a region - industry matrix 
+## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
@@ -33,10 +33,6 @@ Hirschman, A.O. (1945) \emph{National Power and the Structure of Foreign Trade},
 \seealso{
 \code{\link{Krugman.index}}
 }
-\keyword{Herfindahl}
-\keyword{advantage,}
-\keyword{comparative}
-\keyword{location}
-\keyword{quotient,}
-\keyword{relative}
+\keyword{concentration}
+\keyword{specialization}
 

@@ -28,10 +28,6 @@ Gini, C. (1921) Measurement of Inequality of Incomes, \emph{The Economic Journal
 \seealso{
 \code{\link{Hoover.curve}}
 }
-\keyword{Gini}
-\keyword{advantage,}
-\keyword{comparative}
-\keyword{location}
-\keyword{quotient,}
-\keyword{relative}
+\keyword{concentration}
+\keyword{inequality}
 

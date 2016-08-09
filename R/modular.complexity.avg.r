@@ -1,6 +1,6 @@
-#' Compute a measure of modular complexity of patent documents
+#' Compute a measure of average modular complexity of technologies
 #'
-#' This function computes a measure of modular complexity of patent documents from technological classes - patents (incidence) matrices
+#' This function computes a measure of average modular complexity of technologies (average complexity of patent documents in a given technological class) from technological classes - patents (incidence) matrices
 #' @param mat A bipartite adjacency matrix (can be a sparse matrix)
 #' @param sparse Logical; is the input matrix a sparse matrix? Defaults to FALSE, but can be set to TRUE if the input matrix is a sparse matrix
 #' @param list Logical; is the input a list? Defaults to FALSE (input = adjacency matrix), but can be set to TRUE if the input is an edge list
@@ -14,7 +14,7 @@
 #' colnames(mat) <- c ("US1", "US2", "US3", "US4", "US5")
 #'
 #' ## run the function
-#' modular.complexity (mat)
+#' modular.complexity.avg (mat)
 #'
 #' ## generate a region - industry sparse matrix
 #' library (Matrix)
@@ -22,17 +22,17 @@
 #' ## run the function
 #' smat <- Matrix(mat,sparse=TRUE)
 #'
-#' modular.complexity (smat, sparse = TRUE)
+#' modular.complexity.avg (smat, sparse = TRUE)
 #' ## generate a regular data frame (list)
 #' list <- get.list (mat)
 #'
 #' ## run the function
-#' modular.complexity (list, list = TRUE)
+#' modular.complexity.avg (list, list = TRUE)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @references Fleming, L. and Sorenson, O. (2001) Technology as a complex adaptive system: evidence from patent data, \emph{Research Policy} \strong{30}: 1019-1039
 #' @seealso \code{\link{ease.recombination}}, \code{\link{TCI}}, \code{\link{MORt}}
 
-modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
+modular.complexity.avg <- function(mat, sparse = FALSE, list = FALSE) {
 
   library (Matrix)
 
@@ -45,13 +45,15 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
   diag(cooc) <- 0
   cooc[cooc > 1] <- 1
 
-  Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+  Ease <- Matrix::rowSums(cooc, na.rm =T)/Matrix::rowSums(mat, na.rm =T)
 
-  IntPat <- Matrix::colSums (mat) / (Matrix::t(mat) %*% Ease)
+  IntPat <- Matrix::colSums (mat, na.rm =T) / (Matrix::t(mat) %*% Ease)
   IntPat[is.infinite(IntPat)] <- 0
 
-  IntPat2 <- data.frame (patent = colnames (mat),
-                          mod.comp = as.numeric (IntPat))
+avgIntPat <- (mat %*% IntPat) / Matrix::rowSums(mat, na.rm =T)
+
+  avgIntPat <- data.frame (tech = rownames (mat),
+                          avg.mod.comp = as.numeric (avgIntPat))
 
    } else {
 
@@ -59,14 +61,15 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
   diag(cooc) <- 0
   cooc[cooc > 1] <- 1
 
-  Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+  Ease <- Matrix::rowSums(cooc, na.rm =T)/Matrix::rowSums(mat, na.rm =T)
 
-  IntPat <- Matrix::colSums (mat) / (Matrix::t(mat) %*% Ease)
+  IntPat <- Matrix::colSums (mat, na.rm =T) / (Matrix::t(mat) %*% Ease)
   IntPat[is.infinite(IntPat)] <- 0
 
-  IntPat2 <- data.frame (patent = colnames (mat),
-                          mod.comp = as.numeric (IntPat))
+avgIntPat <- (mat %*% IntPat) / Matrix::rowSums(mat, na.rm =T)
 
+  avgIntPat <- data.frame (tech = rownames (mat),
+                          avg.mod.comp = as.numeric (avgIntPat))
 
    }
 
@@ -84,10 +87,14 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
      Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
      IntPat <- Matrix::colSums(mat)/(Matrix::t(mat) %*% Ease)
      IntPat[is.infinite(IntPat)] <- 0
-     IntPat2 <- data.frame(patent = colnames(mat), mod.comp = round(as.numeric(IntPat), 2))
+
+avgIntPat <- (mat %*% IntPat) / Matrix::rowSums(mat, na.rm =T)
+
+  avgIntPat <- data.frame (tech = rownames (mat),
+                          avg.mod.comp = as.numeric (avgIntPat))
 
 }
 
-  return(IntPat2)
+  return(avgIntPat)
 }
 

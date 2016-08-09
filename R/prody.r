@@ -1,17 +1,17 @@
-#' Compute the prody index of industries from regions - industries matrices 
+#' Compute the prody index of industries from regions - industries matrices
 #'
-#' This function computes the prody index of industries from (incidence) regions - industries matrices, as proposed by Hausmann, Hwang & Rodrik (2007). The index gives an associated income level for each industry. It represents a weighted average of per-capita GDPs (but GDP can be replaced by R&D, education...), where the weights correspond to the revealed comparative advantage of each region in a given industry (or sector, technology, ...). 
+#' This function computes the prody index of industries from (incidence) regions - industries matrices, as proposed by Hausmann, Hwang & Rodrik (2007). The index gives an associated income level for each industry. It represents a weighted average of per-capita GDPs (but GDP can be replaced by R&D, education...), where the weights correspond to the revealed comparative advantage of each region in a given industry (or sector, technology, ...).
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param vec A vector that gives GDP, R&D, education or any other relevant regional attribute that will be used to compute the weighted average for each industry
-#' @keywords location quotient, revealed comparative advantage 
+#' @keywords complexity concentration
 #' @export
 #' @examples
-#' ## generate a region - industry matrix 
+#' ## generate a region - industry matrix
 #' set.seed(31)
-#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4) 
+#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
 #' rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 #' colnames(mat) <- c ("I1", "I2", "I3", "I4")
-#' 
+#'
 #' ## a vector of GDP of regions
 #' vec <- c (5, 10, 15, 25, 50)
 #' ## run the function
@@ -30,7 +30,7 @@ prody <- function(mat, vec) {
   # (vec %*% (mat / rowSums (mat)) ) / colSums (mat / rowSums (mat))
 
   return (p)
-  
+
 }
 
 
