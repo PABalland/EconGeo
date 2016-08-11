@@ -2,6 +2,7 @@
 #'
 #' This function plots a locational Gini curve following Krugman from regions - industries matrices.
 #' @param mat An incidence matrix with regions in rows and industries in columns
+#' @param col For which industry shall the curve be plotted? Indicate the correponding column number
 #' @keywords concentration inequality
 #' @export
 #' @examples
@@ -12,7 +13,7 @@
 #' colnames(mat) <- c ("I1", "I2", "I3", "I4")
 #'
 #' ## run the function
-#' locational.Gini.curve (mat)
+#' locational.Gini.curve (mat, col = 1)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{locational.Gini}}
 #' @references Krugman P. (1991) \emph{Geography and Trade}, MIT Press, Cambridge (chapter 2 - p.56)

@@ -8,6 +8,8 @@ locational.Gini.curve(mat, col = 1)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns}
+
+\item{col}{For which industry shall the curve be plotted? Indicate the correponding column number}
 }
 \description{
 This function plots a locational Gini curve following Krugman from regions - industries matrices.
@@ -20,7 +22,7 @@ rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
 ## run the function
-locational.Gini.curve (mat)
+locational.Gini.curve (mat, col = 1)
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
