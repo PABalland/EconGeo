@@ -19,7 +19,9 @@
 Hoover.curve <- function(ind, pop) {
   ind <- c(0, ind)
   pop <- c(0, pop)
-  oind <- order(ind)
+  o = ind/pop
+  o[is.na(o)] = 0
+  oind <- order(o)
   ind <- ind[oind]
   pop <- pop[oind]
   cind <- cumsum(ind)/max(cumsum(ind))
