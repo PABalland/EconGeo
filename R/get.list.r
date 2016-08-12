@@ -18,13 +18,13 @@
 #' @seealso \code{\link{get.matrix}}
 
 
-get.list = function (mat)
-{
-  library (reshape2)
-  list <- melt(mat)
+get.list = function (mat){
+  library(Matrix)
+  list = Matrix(mat, sparse = T)
+  list = Matrix::summary(list)
+  list = as.data.frame(as.matrix(list))
   colnames(list) <- c("Region", "Industry", "Count")
   return(list)
-
 }
 
 
