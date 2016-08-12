@@ -18,15 +18,12 @@
 #' @seealso \code{\link{get.matrix}}
 
 
-get.list <- function(mat) {
-
-  library(Matrix)
-  list = Matrix(mat, sparse = T)
-  list = summary(list)
-  list = as.data.frame(as.matrix(list))
-  #colnames(list) <- c("Region", "Industry", "Count")
+get.list = function (mat)
+{
+  library (reshape2)
+  list <- melt(mat)
+  colnames(list) <- c("Region", "Industry", "Count")
   return(list)
-
 }
 
 
