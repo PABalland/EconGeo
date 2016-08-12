@@ -20,12 +20,13 @@
 
 get.list <- function(mat) {
 
-  library (Matrix)
-  list = Matrix (mat, sparse = T)
-  list = summary (list)
-  list = as.data.frame (as.matrix(list))
-  colnames (list) <- c ("Region", "Industry", "Count")
-  return (list)
+  library(Matrix)
+  list = Matrix(mat, sparse = T)
+  list = summary(list)
+  list = as.data.frame(as.matrix(list))
+  nlist = list
+  colnames(nlist) <- c("Region", "Industry", "Count")
+  return(nlist)
 
 }
 
