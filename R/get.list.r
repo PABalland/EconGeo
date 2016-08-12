@@ -24,6 +24,7 @@ get.list = function (mat)
   list <- melt(mat)
   colnames(list) <- c("Region", "Industry", "Count")
   return(list)
+
 }
 
 
