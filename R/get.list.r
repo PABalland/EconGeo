@@ -24,12 +24,9 @@ get.list <- function(mat) {
   list = Matrix(mat, sparse = T)
   list = summary(list)
   list = as.data.frame(as.matrix(list))
-  nlist = list
-  colnames(nlist) <- c("Region", "Industry", "Count")
-  return(nlist)
+  #colnames(list) <- c("Region", "Industry", "Count")
+  return(list)
 
 }
-
-
 
 
