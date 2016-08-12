@@ -8,6 +8,8 @@ get.list (data)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns (or the other way around)}
+
+\item{sparse}{Logical; is the input a sparse matrix? Defaults to FALSE}
 }
 \description{
 This function creates regular data frames with three columns (regions, industries, count) from (incidence) matrices (wide to long format) using the reshape2 package
@@ -21,6 +23,14 @@ colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
 ## run the function
 get.list (mat)
+
+## generate a sparse matrix
+mat = Matrix (matrix(sample(0:100,20,replace=T), ncol = 4))
+rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c ("I1", "I2", "I3", "I4")
+
+## run the function
+get.list (mat, sparse = T)
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
