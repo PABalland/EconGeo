@@ -6,13 +6,13 @@
 #' @keywords complexity
 #' @export
 #' @examples
-#' ## generate a region - industry matrix
+#' ## generate a technology - patent matrix
 #' set.seed(31)
 #' mat <- matrix(sample(0:1,30,replace=T), ncol = 5)
 #' rownames(mat) <- c ("T1", "T2", "T3", "T4", "T5", "T6")
 #' colnames(mat) <- c ("US1", "US2", "US3", "US4", "US5")
 #'
-#' ## generate a region - industry sparse matrix
+#' ## generate a technology - patent sparse matrix
 #' library (Matrix)
 #' smat <- Matrix(mat,sparse=TRUE)
 #'
@@ -35,19 +35,22 @@ ease.recombination <- function(mat, sparse = FALSE) {
   cooc[cooc > 1] <- 1
 
   Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+  Ease = round (Ease, 2)
+
 
    } else {
 
      mat <- get.matrix(mat, sparse = TRUE)
      cooc = mat %*% Matrix::t(mat)
      diag(cooc) <- 0
-     summ <- summary(cooc)
+     summ <- Matrix::summary(cooc)
      summ$x[summ$x>1] = 1
      x = get.matrix(summ, sparse = T)
      colnames (x) = colnames (cooc)
      rownames (x) = rownames (cooc)
      cooc = x
      Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+     Ease = round (Ease, 2)
 
 
    }

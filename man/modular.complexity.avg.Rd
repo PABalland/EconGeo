@@ -17,7 +17,7 @@ modular.complexity.avg(mat, sparse = FALSE, list = FALSE)
 This function computes a measure of average modular complexity of technologies (average complexity of patent documents in a given technological class) from technological classes - patents (incidence) matrices
 }
 \examples{
-## generate a region - industry matrix
+## generate a technology - patent matrix
 set.seed(31)
 mat <- matrix(sample(0:1,30,replace=T), ncol = 5)
 rownames(mat) <- c ("T1", "T2", "T3", "T4", "T5", "T6")
@@ -26,7 +26,7 @@ colnames(mat) <- c ("US1", "US2", "US3", "US4", "US5")
 ## run the function
 modular.complexity.avg (mat)
 
-## generate a region - industry sparse matrix
+## generate a technology - patent sparse matrix
 library (Matrix)
 
 ## run the function

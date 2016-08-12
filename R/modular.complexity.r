@@ -16,7 +16,7 @@
 #' ## run the function
 #' modular.complexity (mat)
 #'
-#' ## generate a region - industry sparse matrix
+#' ## generate a technology - patent sparse matrix
 #' library (Matrix)
 #'
 #' ## run the function
@@ -51,7 +51,7 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
   IntPat[is.infinite(IntPat)] <- 0
 
   IntPat2 <- data.frame (patent = colnames (mat),
-                          mod.comp = as.numeric (IntPat))
+                          mod.comp = round(as.numeric (IntPat), 2))
 
    } else {
 
@@ -65,7 +65,7 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
   IntPat[is.infinite(IntPat)] <- 0
 
   IntPat2 <- data.frame (patent = colnames (mat),
-                          mod.comp = as.numeric (IntPat))
+                          mod.comp = round (as.numeric (IntPat),2))
 
 
    }
