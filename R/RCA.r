@@ -20,6 +20,7 @@
 #' @references Balassa, B. (1965) Trade Liberalization and Revealed Comparative Advantage, \emph{The Manchester School} \strong{33}: 99-123.
 
 RCA <- function(mat, binary = FALSE) {
+  mat = as.matrix (mat)
   share_tech_city <- mat / rowSums (mat)
   share_tech_total <- colSums (mat) / sum (mat)
   if (binary) {
