@@ -4,15 +4,19 @@
 \alias{Hoover.curve}
 \title{Compute the Hoover curve from regional counts in population and industry}
 \usage{
-Hoover.curve(ind, pop)
+Hoover.curve(mat, pop, pdf = FALSE, sum = FALSE)
 }
 \arguments{
-\item{ind}{A vector of industrial regional count}
+\item{mat}{An incidence matrix with regions in rows and industries in columns or a vector of industrial regional count}
 
 \item{pop}{A vector of population regional count}
+
+\item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE}
+
+\item{sum}{Logical; shall the function use the sums of the rows or instead of plotting a curve for each industry? Defaults to FALSE}
 }
 \description{
-This function computes the Hoover curve (locational Lorenz curve) from regional shares in population and industry
+This function computes the Hoover curve from regional shares in population and industry
 }
 \examples{
 ## generate vectors of industrial and population count
@@ -21,6 +25,26 @@ pop <- c(5, 10, 10, 25, 30)
 
 ## run the function
 Hoover.curve (ind, pop)
+Hoover.curve (ind, pop, pdf = TRUE)
+
+## generate a region - industry matrix
+set.seed(31)
+mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
+rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c ("I1", "I2", "I3", "I4")
+
+## run the function
+Hoover.curve (mat, pop)
+Hoover.curve (mat, pop, pdf = TRUE)
+
+## run the function by aggregating all industries
+Hoover.curve (mat, pop, sum = TRUE)
+Hoover.curve (mat, pop, sum = TRUE, pdf = TRUE)
+
+## run the function for industry #2 only
+Hoover.curve (mat[,2], pop)
+Hoover.curve (mat[,2], pop, pdf = TRUE)
+
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
