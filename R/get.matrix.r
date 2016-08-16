@@ -31,8 +31,8 @@ get.matrix <- function(data, sparse = FALSE) {
   if (sparse) {
   library (Matrix)
 
-  data[,1] <- as.factor(data[,1])
-  data[,2] <- as.factor(data[,2])
+  data[,1] <- factor(data[,1])
+  data[,2] <- factor(data[,2])
   adj <- sparseMatrix(as.integer(data[,1]), as.integer(data[,2]), x = data[,3])
 
   rownames(adj) = levels(data[,1])
