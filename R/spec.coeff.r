@@ -17,7 +17,6 @@
 #' @seealso \code{\link{Krugman.index}}
 #' @references Hoover, E.M. and Giarratani, F. (1985) \emph{An Introduction to Regional Economics}. 3rd edition. New York: Alfred A. Knopf (see table 9-4 in particular)
 
-
 spec.coeff <- function(mat) {
   share_tech_city <- mat / rowSums (mat)
   share_tech_total <- colSums (mat) / sum (mat)

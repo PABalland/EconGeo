@@ -4,25 +4,34 @@
 \alias{locational.Gini.curve}
 \title{Plot a locational Gini curve from regions - industries matrices}
 \usage{
-locational.Gini.curve(mat, col = 1)
+locational.Gini.curve(mat, pdf = FALSE)
 }
 \arguments{
-\item{mat}{An incidence matrix with regions in rows and industries in columns}
+\item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
 
-\item{col}{For which industry shall the curve be plotted? Indicate the correponding column number}
+\item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all locational Gini curves will be compiled and saved to your current working directory.}
+
+\item{pop}{A vector of population regional count}
 }
 \description{
 This function plots a locational Gini curve following Krugman from regions - industries matrices.
 }
 \examples{
-## generate a region - industry matrix
-set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
-rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
-## run the function
-locational.Gini.curve (mat, col = 1)
+## generate a region - industry matrix
+mat = matrix (
+c (100, 0, 0, 0, 0,
+0, 15, 5, 70, 10,
+0, 20, 10, 20, 50,
+0, 25, 30, 5, 40,
+0, 40, 55, 5, 0), ncol = 5, byrow = T)
+rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c ("I1", "I2", "I3", "I4", "I5")
+
+## run the function (shows industry #5)
+locational.Gini.curve (mat)
+locational.Gini.curve (mat, pdf = TRUE)
+
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
@@ -31,7 +40,7 @@ Pierre-Alexandre Balland \email{p.balland@uu.nl}
 Krugman P. (1991) \emph{Geography and Trade}, MIT Press, Cambridge (chapter 2 - p.56)
 }
 \seealso{
-\code{\link{locational.Gini}}
+\code{\link{Hoover.Gini}}, \code{\link{locational.Gini}}, \code{\link{Hoover.curve}}, \code{\link{Lorenz.curve}}, \code{\link{Gini}}
 }
 \keyword{concentration}
 \keyword{inequality}

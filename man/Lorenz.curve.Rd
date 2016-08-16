@@ -4,10 +4,12 @@
 \alias{Lorenz.curve}
 \title{Plot a Lorenz curve from regional industrial counts}
 \usage{
-Lorenz.curve(ind)
+Lorenz.curve(mat, pdf = FALSE)
 }
 \arguments{
-\item{ind}{A vector of industrial regional count}
+\item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
+
+\item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Lorenz curves will be compiled and saved to your current working directory.}
 }
 \description{
 This function plots a Lorenz curve from regional industrial counts. This curve gives an indication of the unequal distribution of an industry accross regions.
@@ -18,6 +20,42 @@ ind <- c(0, 10, 10, 30, 50)
 
 ## run the function
 Lorenz.curve (ind)
+Lorenz.curve (ind, pdf = TRUE)
+
+## generate a region - industry matrix
+mat = matrix (
+c (0, 1, 0, 0,
+0, 1, 0, 0,
+0, 1, 0, 0,
+0, 1, 0, 1,
+0, 1, 1, 1), ncol = 4, byrow = T)
+rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c ("I1", "I2", "I3", "I4")
+
+## run the function
+Lorenz.curve (mat)
+Lorenz.curve (mat, pdf = TRUE)
+
+## run the function by aggregating all industries
+Lorenz.curve (rowSums(mat))
+Lorenz.curve (rowSums(mat))
+
+## run the function for industry #1 only (perfect equality)
+Lorenz.curve (mat[,1])
+Lorenz.curve (mat[,1], pdf = TRUE)
+
+## run the function for industry #2 only (perfect equality)
+Lorenz.curve (mat[,2])
+Lorenz.curve (mat[,2], pdf = TRUE)
+
+## run the function for industry #3 only (perfect unequality)
+Lorenz.curve (mat[,3])
+Lorenz.curve (mat[,3], pdf = TRUE)
+
+## run the function for industry #4 only (top 40\% produces 100\% of the output)
+Lorenz.curve (mat[,4])
+Lorenz.curve (mat[,4], pdf = TRUE)
+
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
@@ -26,7 +64,7 @@ Pierre-Alexandre Balland \email{p.balland@uu.nl}
 Lorenz, M. O. (1905) Methods of measuring the concentration of wealth, \emph{Publications of the American Statistical Association} \strong{9}: 209–219
 }
 \seealso{
-\code{\link{Hoover.curve}}, \code{\link{Gini}}
+\code{\link{Hoover.Gini}}, \code{\link{locational.Gini}}, \code{\link{locational.Gini.curve}}, \code{\link{Hoover.curve}}, \code{\link{Gini}}
 }
 \keyword{concentration}
 \keyword{inequality}
