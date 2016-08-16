@@ -45,7 +45,7 @@
 
 Gini <- function (mat) {
 
-  mat = ind[complete.cases (mat)]
+  mat = mat[complete.cases (mat)]
   mat = as.matrix (mat)
 
     G <- function(mat, col = 1) {
