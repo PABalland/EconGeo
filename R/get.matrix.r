@@ -9,8 +9,8 @@
 #' @examples
 #' ## generate a region - industry data frame
 #' set.seed(31)
-#' region <- c("R1", "R1", "R1", "R1", "R2", "R2", "R3", "R4", "R5")
-#' industry <- c("I1", "I2", "I3", "I4", "I1", "I2", "I1", "I1", "I3")
+#' region <- c("R1", "R1", "R1", "R1", "R2", "R2", "R3", "R4", "R5", "R5")
+#' industry <- c("I1", "I2", "I3", "I4", "I1", "I2", "I1", "I1", "I3", "I3")
 #' data <- data.frame (region, industry)
 #' data$count <- 1
 #'
@@ -22,6 +22,12 @@
 
 
 get.matrix <- function(data, sparse = FALSE) {
+
+  data$x <- paste(data[,1],data[,2], sep = ".")
+  data$y <- ave(data[,3], data[,4], FUN=sum)
+  data <- data[!duplicated(data), ]
+  data[,3:4] <- NULL
+
   if (sparse) {
   library (Matrix)
 

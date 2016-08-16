@@ -17,8 +17,8 @@ This function creates regions - industries (incidence) matrices from regular dat
 \examples{
 ## generate a region - industry data frame
 set.seed(31)
-region <- c("R1", "R1", "R1", "R1", "R2", "R2", "R3", "R4", "R5")
-industry <- c("I1", "I2", "I3", "I4", "I1", "I2", "I1", "I1", "I3")
+region <- c("R1", "R1", "R1", "R1", "R2", "R2", "R3", "R4", "R5", "R5")
+industry <- c("I1", "I2", "I3", "I4", "I1", "I2", "I1", "I1", "I3", "I3")
 data <- data.frame (region, industry)
 data$count <- 1
 
