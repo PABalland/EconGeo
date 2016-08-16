@@ -61,6 +61,10 @@ Hoover.curve <- function(mat, pop, pdf = FALSE) {
 
       ind <- c(0, mat[,col])
       pop <- c(0, pop)
+      c = data.frame (ind, pop)
+      c = c[complete.cases(c),]
+      ind = c$ind
+      pop = c$pop
       o = ind/pop
       o[is.na(o)] = 0
       oind <- order(o)

@@ -53,6 +53,7 @@
 
 Lorenz.curve <- function(mat, pdf = FALSE) {
 
+  mat = ind[complete.cases (mat)]
   mat = as.matrix (mat)
 
   HC <- function(mat, col = 1) {
