@@ -47,18 +47,25 @@
 #' Lorenz.curve (mat[,4])
 #' Lorenz.curve (mat[,4], pdf = TRUE)
 #'
+#' Compare the distribution of the #industries
+#' par(mfrow=c(2,2))
+#' Lorenz.curve (mat[,1])
+#' Lorenz.curve (mat[,2])
+#' Lorenz.curve (mat[,3])
+#' Lorenz.curve (mat[,4])
+#'
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{Hoover.Gini}}, \code{\link{locational.Gini}}, \code{\link{locational.Gini.curve}}, \code{\link{Hoover.curve}}, \code{\link{Gini}}
 #' @references Lorenz, M. O. (1905) Methods of measuring the concentration of wealth, \emph{Publications of the American Statistical Association} \strong{9}: 209–219
 
 Lorenz.curve <- function(mat, pdf = FALSE) {
 
-  mat = mat[complete.cases (mat)]
   mat = as.matrix (mat)
 
   HC <- function(mat, col = 1) {
 
     x <- mat[,col]
+    x = x[complete.cases (x)]
     weights = rep(1, length = length(x))
     ox <- order(x)
     x <- x[ox]
