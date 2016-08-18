@@ -3,6 +3,7 @@
 export(Gini)
 export(Hachman)
 export(Herfindahl)
+export(Hoover.Gini)
 export(Hoover.coord)
 export(Hoover.curve)
 export(Hoover.index)

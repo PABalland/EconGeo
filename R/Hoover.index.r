@@ -5,7 +5,7 @@
 #' Computation of the Hoover index: \eqn{H=1/2\sum _{ i=1 }^{ N }{ \left| \frac { { E }_{ i } }{ { E }_{ total } } -\frac { { A }_{ i } }{ { A }_{ total } }  \right|  }  }
 #'
 #' @param mat An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).
-#' @param pop A vector of population regional count
+#' @param pop A vector of population regional count; if this argument is missing an equal distribution of the reference group will be assumed.
 #' @param pdf Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Hoover indices will be compiled and saved to your current working directory.
 #' @keywords concentration inequality
 #' @export
@@ -54,6 +54,10 @@ Hoover.index <- function (mat, pop) {
 
   mat = as.matrix (mat)
 
+  if (missing(pop)) {
+    pop = 1/nrow(mat)
+  }
+
   HG <- function(mat, pop, col = 1) {
 
     ind <- mat[,col]
@@ -66,8 +70,9 @@ Hoover.index <- function (mat, pop) {
     pop = pop/sum(pop)
     s = abs (ind - pop)
     s = sum (s)
-    s = round ((s/2), digits = 2)
     s = s*100
+    s = round ((s/2), digits = 2)
+
 
   }
 

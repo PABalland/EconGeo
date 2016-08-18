@@ -9,14 +9,14 @@ Hoover.index(mat, pop)
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
 
-\item{pop}{A vector of population regional count}
+\item{pop}{A vector of population regional count; if this argument is missing an equal distribution of the reference group will be assumed.}
 
 \item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Hoover indices will be compiled and saved to your current working directory.}
 }
 \description{
 This function computes the Hoover index, named after Hedgar Hoover. The Hoover index is a measure of spatial inequality. It ranges from 0 (perfect equality) to 100 (perfect inequality) and is calculated from the Lorenz curve associated with a given distribution of population, industries or technologies. In this sense, it is closely related to the Gini coefficient. The Hoover index represents the maximum vertical distance between the Lorenz curve and the 45 degree line of perfect spatial equality. It indicates the proportion of industries, jobs, or population needed to be transferred from the top to the bottom of the distribution to achieve perfect spatial equality. The Hoover index is also known as the Robin Hood index in studies of income inequality.\cr
 \cr
-Computation of the Hoover index \eqn{H=1/2\sum _{ i=1 }^{ N }{ \left| \frac { { E }_{ i } }{ { E }_{ total } } -\frac { { A }_{ i } }{ { A }_{ total } }  \right|  }  }
+Computation of the Hoover index: \eqn{H=1/2\sum _{ i=1 }^{ N }{ \left| \frac { { E }_{ i } }{ { E }_{ total } } -\frac { { A }_{ i } }{ { A }_{ total } }  \right|  }  }
 }
 \examples{
 ## generate vectors of industrial and population count
