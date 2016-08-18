@@ -4,12 +4,14 @@
 \alias{Lorenz.curve}
 \title{Plot a Lorenz curve from regional industrial counts}
 \usage{
-Lorenz.curve(mat, pdf = FALSE)
+Lorenz.curve(mat, pdf = FALSE, plot = TRUE)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
 
 \item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Lorenz curves will be compiled and saved to your current working directory.}
+
+\item{plot}{Logical; shall the curve be automatically plotted? Defaults to TRUE. If set to TRUE, the function will return x y coordinates that you can latter use to plot and customize the curve.}
 }
 \description{
 This function plots a Lorenz curve from regional industrial counts. This curve gives an indication of the unequal distribution of an industry accross regions.
@@ -21,6 +23,7 @@ ind <- c(0, 10, 10, 30, 50)
 ## run the function
 Lorenz.curve (ind)
 Lorenz.curve (ind, pdf = TRUE)
+Lorenz.curve (ind, plot = FALSE)
 
 ## generate a region - industry matrix
 mat = matrix (
@@ -35,26 +38,32 @@ colnames(mat) <- c ("I1", "I2", "I3", "I4")
 ## run the function
 Lorenz.curve (mat)
 Lorenz.curve (mat, pdf = TRUE)
+Lorenz.curve (mat, plot = FALSE)
 
 ## run the function by aggregating all industries
 Lorenz.curve (rowSums(mat))
-Lorenz.curve (rowSums(mat))
+Lorenz.curve (rowSums(mat), pdf = TRUE)
+Lorenz.curve (rowSums(mat), plot = FALSE)
 
 ## run the function for industry #1 only (perfect equality)
 Lorenz.curve (mat[,1])
 Lorenz.curve (mat[,1], pdf = TRUE)
+Lorenz.curve (mat[,1], plot = FALSE)
 
 ## run the function for industry #2 only (perfect equality)
 Lorenz.curve (mat[,2])
 Lorenz.curve (mat[,2], pdf = TRUE)
+Lorenz.curve (mat[,2], plot = FALSE)
 
 ## run the function for industry #3 only (perfect unequality)
 Lorenz.curve (mat[,3])
 Lorenz.curve (mat[,3], pdf = TRUE)
+Lorenz.curve (mat[,3], plot = FALSE)
 
 ## run the function for industry #4 only (top 40\% produces 100\% of the output)
 Lorenz.curve (mat[,4])
 Lorenz.curve (mat[,4], pdf = TRUE)
+Lorenz.curve (mat[,4], plot = FALSE)
 
 Compare the distribution of the #industries
 par(mfrow=c(2,2))

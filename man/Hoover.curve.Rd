@@ -4,12 +4,14 @@
 \alias{Hoover.curve}
 \title{Plot a Hoover curve from regions - industries matrices}
 \usage{
-Hoover.curve(mat, pop, pdf = FALSE)
+Hoover.curve(mat, pop, plot = TRUE, pdf = FALSE)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
 
 \item{pop}{A vector of population regional count}
+
+\item{plot}{Logical; shall the curve be automatically plotted? Defaults to TRUE. If set to TRUE, the function will return x y coordinates that you can latter use to plot and customize the curve.}
 
 \item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Hoover curves will be compiled and saved to your current working directory.}
 }
@@ -24,6 +26,7 @@ pop <- c(10, 15, 20, 25, 30)
 ## run the function (30\% of the population produces 50\% of the industrial output)
 Hoover.curve (ind, pop)
 Hoover.curve (ind, pop, pdf = TRUE)
+Hoover.curve (ind, pop, plot = F)
 
 ## generate a region - industry matrix
 mat = matrix (
@@ -38,26 +41,32 @@ colnames(mat) <- c ("I1", "I2", "I3", "I4")
 ## run the function
 Hoover.curve (mat, pop)
 Hoover.curve (mat, pop, pdf = TRUE)
+Hoover.curve (mat, pop, plot = FALSE)
 
 ## run the function by aggregating all industries
 Hoover.curve (rowSums(mat), pop)
 Hoover.curve (rowSums(mat), pop, pdf = TRUE)
+Hoover.curve (rowSums(mat), pop, plot = FALSE)
 
 ## run the function for industry #1 only
 Hoover.curve (mat[,1], pop)
 Hoover.curve (mat[,1], pop, pdf = TRUE)
+Hoover.curve (mat[,1], pop, plot = FALSE)
 
 ## run the function for industry #2 only (perfectly proportional to population)
 Hoover.curve (mat[,2], pop)
 Hoover.curve (mat[,2], pop, pdf = TRUE)
+Hoover.curve (mat[,2], pop, plot = FALSE)
 
 ## run the function for industry #3 only (30\% of the pop. produces 100\% of the output)
 Hoover.curve (mat[,3], pop)
 Hoover.curve (mat[,3], pop, pdf = TRUE)
+Hoover.curve (mat[,3], pop, plot = FALSE)
 
 ## run the function for industry #4 only (55\% of the pop. produces 100\% of the output)
 Hoover.curve (mat[,4], pop)
 Hoover.curve (mat[,4], pop, pdf = TRUE)
+Hoover.curve (mat[,4], pop, plot = FALSE)
 
 Compare the distribution of the #industries
 par(mfrow=c(2,2))
