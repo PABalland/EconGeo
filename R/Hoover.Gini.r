@@ -66,7 +66,7 @@ Hoover.Gini <- function (mat, pop) {
     cind <- cumsum(ind)/max(cumsum(ind))
     cpop <- cumsum(pop)/max(cumsum(pop))
     nn = length (cind)
-    sum(cind[-1] * cpop[-nn]) - sum(cind[-nn] * cpop[-1])
+    round (sum(cind[-1] * cpop[-nn]) - sum(cind[-nn] * cpop[-1]), 3)
 
   }
 

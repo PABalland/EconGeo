@@ -58,7 +58,7 @@ Gini <- function (mat) {
       nu <- cumsum(weights * x)
       n <- length(nu)
       nu <- nu/nu[n]
-      sum(nu[-1] * p[-n]) - sum(nu[-n] * p[-1])
+      round (sum(nu[-1] * p[-n]) - sum(nu[-n] * p[-1]), 3)
     }
 
   if (ncol(mat) == 1) {
