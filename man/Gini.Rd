@@ -30,22 +30,22 @@ rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
 colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
 ## run the function
-Lorenz.curve (mat)
+Gini (mat)
 
 ## run the function by aggregating all industries
-Lorenz.curve (rowSums(mat))
+Gini (rowSums(mat))
 
 ## run the function for industry #1 only (perfect equality)
-Lorenz.curve (mat[,1])
+Gini (mat[,1])
 
 ## run the function for industry #2 only (perfect equality)
-Lorenz.curve (mat[,2])
+Gini (mat[,2])
 
 ## run the function for industry #3 only (perfect unequality: max Gini = (5-1)/5)
-Lorenz.curve (mat[,3])
+Gini (mat[,3])
 
 ## run the function for industry #4 only (top 40\% produces 100\% of the output)
-Lorenz.curve (mat[,4])
+Gini (mat[,4])
 
 }
 \author{

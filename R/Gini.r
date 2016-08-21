@@ -22,22 +22,22 @@
 #' colnames(mat) <- c ("I1", "I2", "I3", "I4")
 #'
 #' ## run the function
-#' Lorenz.curve (mat)
+#' Gini (mat)
 #'
 #' ## run the function by aggregating all industries
-#' Lorenz.curve (rowSums(mat))
+#' Gini (rowSums(mat))
 #'
 #' ## run the function for industry #1 only (perfect equality)
-#' Lorenz.curve (mat[,1])
+#' Gini (mat[,1])
 #'
 #' ## run the function for industry #2 only (perfect equality)
-#' Lorenz.curve (mat[,2])
+#' Gini (mat[,2])
 #'
 #' ## run the function for industry #3 only (perfect unequality: max Gini = (5-1)/5)
-#' Lorenz.curve (mat[,3])
+#' Gini (mat[,3])
 #'
 #' ## run the function for industry #4 only (top 40% produces 100% of the output)
-#' Lorenz.curve (mat[,4])
+#' Gini (mat[,4])
 #'
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{Hoover.Gini}}, \code{\link{locational.Gini}}, \code{\link{locational.Gini.curve}}, \code{\link{Lorenz.curve}}, \code{\link{Hoover.curve}}
@@ -45,11 +45,11 @@
 
 Gini <- function (mat) {
 
-  mat = mat[complete.cases (mat)]
   mat = as.matrix (mat)
 
     G <- function(mat, col = 1) {
       x <- mat[, col]
+      x = x[complete.cases (x)]
       weights = rep(1, length = length(x))
       ox <- order(x)
       x <- x[ox]
