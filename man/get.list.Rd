@@ -23,16 +23,6 @@ colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
 ## run the function
 get.list (mat)
-
-## generate a sparse matrix
-library (Matrix)
-set.seed(31)
-mat = Matrix (matrix(sample(0:100,20,replace=T), ncol = 4))
-rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-colnames(mat) <- c ("I1", "I2", "I3", "I4")
-
-## run the function
-get.list (mat, sparse = T)
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
