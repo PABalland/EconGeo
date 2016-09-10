@@ -23,8 +23,8 @@
 
 get.matrix <- function(data, sparse = FALSE) {
 
-  data$x <- paste(data[,1],data[,2], sep = ".")
-  data$y <- ave(data[,3], data[,4], FUN=sum)
+  data$azertyuiop <- paste(data[,1],data[,2], sep = ".")
+  data$qsdfghjklm <- ave(data[,3], data[,4], FUN=sum)
   data <- data[!duplicated(data), ]
   data[,3:4] <- NULL
 
