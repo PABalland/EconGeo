@@ -73,7 +73,7 @@ ease.recombination <- function(mat, sparse = FALSE, list = FALSE) {
     rownames (x) = rownames (cooc)
     cooc = x
     Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
-    IntPat2 <- data.frame (tech = rownames (mat),
+    IntPat2 <- data.frame (tech = rownames (cooc),
                            eor = round (as.numeric (Ease),2))
 
   }
