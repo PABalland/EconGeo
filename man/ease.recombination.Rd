@@ -4,7 +4,7 @@
 \alias{ease.recombination}
 \title{Compute the ease of recombination of a given technological class}
 \usage{
-ease.recombination(mat, sparse = FALSE)
+ease.recombination(mat, sparse = FALSE, list = FALSE)
 }
 \arguments{
 \item{mat}{A bipartite adjacency matrix (can be a sparse matrix)}
@@ -26,8 +26,14 @@ library (Matrix)
 smat <- Matrix(mat,sparse=TRUE)
 
 ## run the function
-modular.complexity (mat)
-modular.complexity (smat, sparse = TRUE)
+ease.recombination (mat)
+ease.recombination (smat, sparse = TRUE)
+
+## generate a regular data frame (list)
+list <- get.list (mat)
+
+## run the function
+ease.recombination (list, list = TRUE)
 }
 \author{
 Pierre-Alexandre Balland \email{p.balland@uu.nl}

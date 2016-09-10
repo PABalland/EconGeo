@@ -17,45 +17,68 @@
 #' smat <- Matrix(mat,sparse=TRUE)
 #'
 #' ## run the function
-#' modular.complexity (mat)
-#' modular.complexity (smat, sparse = TRUE)
+#' ease.recombination (mat)
+#' ease.recombination (smat, sparse = TRUE)
+#'
+#' ## generate a regular data frame (list)
+#' list <- get.list (mat)
+#'
+#' ## run the function
+#' ease.recombination (list, list = TRUE)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @references Fleming, L. and Sorenson, O. (2001) Technology as a complex adaptive system: evidence from patent data, \emph{Research Policy} \strong{30}: 1019-1039
 #' @seealso \code{\link{modular.complexity}}, \code{\link{TCI}}, \code{\link{MORt}}
 
-ease.recombination <- function(mat, sparse = FALSE) {
+ease.recombination <- function(mat, sparse = FALSE, list = FALSE) {
 
   library (Matrix)
 
-  if (!sparse) {
+  if (!list) {
 
-  mat <- Matrix(mat,sparse=TRUE)
-  cooc =   mat %*% Matrix::t(mat)
-  diag(cooc) <- 0
-  cooc[cooc > 1] <- 1
+    if (!sparse) {
 
-  Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
-  Ease = round (Ease, 2)
+      mat <- Matrix(mat,sparse=TRUE)
+      cooc =   mat %*% Matrix::t(mat)
+      diag(cooc) <- 0
+      cooc[cooc > 1] <- 1
 
-
-   } else {
-
-     mat <- get.matrix(mat, sparse = TRUE)
-     cooc = mat %*% Matrix::t(mat)
-     diag(cooc) <- 0
-     summ <- Matrix::summary(cooc)
-     summ$x[summ$x>1] = 1
-     x = get.matrix(summ, sparse = T)
-     colnames (x) = colnames (cooc)
-     rownames (x) = rownames (cooc)
-     cooc = x
-     Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
-     Ease = round (Ease, 2)
+      Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+      IntPat2 <- data.frame (tech = rownames (mat),
+                             eor = round (as.numeric (Ease),2))
 
 
-   }
+    } else {
 
-  return(Ease)
+      cooc =   mat %*% Matrix::t(mat)
+      diag(cooc) <- 0
+      cooc[cooc > 1] <- 1
+
+      Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+
+      IntPat2 <- data.frame (tech = rownames (mat),
+                             eor = round (as.numeric (Ease),2))
+
+
+    }
+
+  } else {
+
+    mat <- get.matrix(mat, sparse = TRUE)
+    cooc = mat %*% Matrix::t(mat)
+    diag(cooc) <- 0
+    summ <- Matrix::summary(cooc)
+    summ$x[summ$x>1] = 1
+    x = get.matrix(summ, sparse = T)
+    colnames (x) = colnames (cooc)
+    rownames (x) = rownames (cooc)
+    cooc = x
+    Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
+    IntPat2 <- data.frame (tech = rownames (mat),
+                           eor = round (as.numeric (Ease),2))
+
+  }
+
+  return(IntPat2)
 }
 
 
