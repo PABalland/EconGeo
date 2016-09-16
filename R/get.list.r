@@ -19,7 +19,7 @@
 #' @seealso \code{\link{get.matrix}}
 
 get.list <- function(mat) {
-  library (reshape2)
+  library (reshape)
   list <- melt(mat)
   colnames (list) <- c ("Region", "Industry", "Count")
   return (list)
