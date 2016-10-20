@@ -15,7 +15,7 @@ entry.list(mat1, mat2, mat3, mat4, mat5, mat6, mat7, mat8, mat9, mat10, mat11,
 \item{mat...}{An incidence matrix with regions in rows and industries in columns (period ... - optional)}
 }
 \description{
-This function generates a data frame of entry events from multiple regions - industries matrices (same matrix composition for the different periods). In this function, the maximum number of periods is limited to 20.
+This function generates a data frame of entry events from multiple regions - industries matrices (different matrix compositions are allowed). In this function, the maximum number of periods is limited to 20.
 }
 \examples{
 ## generate a first region - industry matrix in which cells represent the presence/absence
@@ -50,7 +50,8 @@ mat4[5,4] <- 1
 entry.list (mat1, mat2, mat3, mat4)
 }
 \author{
-Pierre-Alexandre Balland \email{p.balland@uu.nl}
+Pierre-Alexandre Balland \email{p.balland@uu.nl} \cr
+Wolf-Hendrik Uhlbach \email{w.p.uhlbach@students.uu.nl}
 }
 \references{
 Boschma, R., Balland, P.A. and Kogler, D. (2015) Relatedness and Technological Change in Cities: The rise and fall of technological knowledge in U.S. metropolitan areas from 1981 to 2010, \emph{Industrial and Corporate Change} \strong{24} (1): 223-250 \cr

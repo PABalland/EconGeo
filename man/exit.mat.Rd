@@ -12,7 +12,7 @@ exit.mat(mat1, mat2)
 \item{mat2}{An incidence matrix with regions in rows and industries in columns (period 2)}
 }
 \description{
-This function generates a matrix of exit events from two regions - industries matrices (same matrix composition from two different periods)
+This function generates a matrix of exit events from two regions - industries matrices (different matrix compositions are allowed)
 }
 \examples{
 ## generate a first region - industry matrix in which cells represent the presence/absence
@@ -32,7 +32,8 @@ mat2[2,1] <- 0
 exit.mat (mat1, mat2)
 }
 \author{
-Pierre-Alexandre Balland \email{p.balland@uu.nl}
+Pierre-Alexandre Balland \email{p.balland@uu.nl} \cr
+Wolf-Hendrik Uhlbach \email{w.p.uhlbach@students.uu.nl}
 }
 \references{
 Boschma, R., Balland, P.A. and Kogler, D. (2015) Relatedness and Technological Change in Cities: The rise and fall of technological knowledge in U.S. metropolitan areas from 1981 to 2010, \emph{Industrial and Corporate Change} \strong{24} (1): 223-250 \cr
