@@ -26,7 +26,7 @@ inv.norm.ubiquity (mat)
 Pierre-Alexandre Balland \email{p.balland@uu.nl}
 }
 \references{
-Balland, P.A. and Rigby, D. (2016) The geography of complex knowledge, \emph{Economic Geography, forthcoming}
+Balland, P.A. and Rigby, D. (2017) The Geography of Complex Knowledge, \emph{Economic Geography} \strong{93} (1): 1-23.
 }
 \seealso{
 \code{\link{diversity}}, \code{\link{location.quotient}}, \code{\link{ubiquity}}, \code{\link{TCI}}, \code{\link{MORt}}

@@ -60,7 +60,7 @@ Pierre-Alexandre Balland \email{p.balland@uu.nl}
 \references{
 Hidalgo, C. and Hausmann, R. (2009) The building blocks of economic complexity, \emph{Proceedings of the National Academy of Sciences} \strong{106}: 10570 - 10575. \cr
 \cr
-Balland, P.A. and Rigby, D. (2016) The geography of complex knowledge, \emph{Economic Geography, forthcoming}
+Balland, P.A. and Rigby, D. (2017) The Geography of Complex Knowledge, \emph{Economic Geography} \strong{93} (1): 1-23.
 }
 \seealso{
 \code{\link{location.quotient}}, \code{\link{ubiquity}}, \code{\link{diversity}}, \code{\link{KCI}}, \code{\link{TCI}}, \code{\link{MORc}}

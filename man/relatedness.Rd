@@ -39,9 +39,11 @@ van Eck, N.J. and Waltman, L. (2009) How to normalize cooccurrence data? An anal
 \cr
 Boschma, R., Heimeriks, G. and Balland, P.A. (2014) Scientific Knowledge Dynamics and Relatedness in Bio-Tech Cities, \emph{Research Policy} \strong{43} (1): 107-114 \cr
 \cr
+Hidalgo, C.A., Klinger, B., Barabasi, A. and Hausmann, R. (2007) The product space conditions the development of nations, \emph{Science} \strong{317}: 482-487 \cr
+\cr
 Balland, P.A. (2016) Relatedness and the Geography of Innovation, in: R. Shearmur, C. Carrincazeaux and D. Doloreux (eds) Handbook on the Geographies of Innovation. Northampton, MA: Edward Elgar \cr
 \cr
-Steijn, M.P.A. (2016) Improvement on the association strength: implementing a probabilistic measure based on combinations without repetition, \emph{Working Paper, Utrecht University}
+Steijn, M.P.A. (2017) Improvement on the association strength: implementing probability measures based on combinations without repetition, \emph{Working Paper, Utrecht University}
 }
 \seealso{
 \code{\link{relatedness.density}}, \code{\link{co.occurence}}

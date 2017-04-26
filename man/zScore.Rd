@@ -25,7 +25,7 @@ dat <- unique(dat)
 mat <- as.matrix(table(dat$patents, dat$techs))
 
 ## run the function
-z <- zScore(mat)
+zScore(mat)
 
 }
 \author{
