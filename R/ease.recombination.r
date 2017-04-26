@@ -44,7 +44,7 @@ ease.recombination <- function(mat, sparse = FALSE, list = FALSE) {
 
       Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
       IntPat2 <- data.frame (tech = rownames (mat),
-                             eor = round (as.numeric (Ease),2))
+                             eor = round (as.numeric (Ease),5))
 
 
     } else {
@@ -56,7 +56,7 @@ ease.recombination <- function(mat, sparse = FALSE, list = FALSE) {
       Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
 
       IntPat2 <- data.frame (tech = rownames (mat),
-                             eor = round (as.numeric (Ease),2))
+                             eor = round (as.numeric (Ease),5))
 
 
     }
@@ -74,7 +74,7 @@ ease.recombination <- function(mat, sparse = FALSE, list = FALSE) {
     cooc = x
     Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
     IntPat2 <- data.frame (tech = rownames (cooc),
-                           eor = round (as.numeric (Ease),2))
+                           eor = round (as.numeric (Ease),5))
 
   }
 

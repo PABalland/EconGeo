@@ -51,7 +51,7 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
   IntPat[is.infinite(IntPat)] <- 0
 
   IntPat2 <- data.frame (patent = colnames (mat),
-                          mod.comp = round(as.numeric (IntPat), 2))
+                          mod.comp = round(as.numeric (IntPat), 5))
 
    } else {
 
@@ -65,7 +65,7 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
   IntPat[is.infinite(IntPat)] <- 0
 
   IntPat2 <- data.frame (patent = colnames (mat),
-                          mod.comp = round (as.numeric (IntPat),2))
+                          mod.comp = round (as.numeric (IntPat),5))
 
 
    }
@@ -84,7 +84,7 @@ modular.complexity <- function(mat, sparse = FALSE, list = FALSE) {
      Ease <- Matrix::rowSums(cooc)/Matrix::rowSums(mat)
      IntPat <- Matrix::colSums(mat)/(Matrix::t(mat) %*% Ease)
      IntPat[is.infinite(IntPat)] <- 0
-     IntPat2 <- data.frame(patent = colnames(mat), mod.comp = round(as.numeric(IntPat), 2))
+     IntPat2 <- data.frame(patent = colnames(mat), mod.comp = round(as.numeric(IntPat), 5))
 
 }
 
