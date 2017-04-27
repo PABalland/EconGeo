@@ -32,11 +32,11 @@ zScore(mat)
 Lars Mewes \email{mewes@wigeo.uni-hannover.de}
 }
 \references{
-Kim, D., Cerigo, D. B., Jeong, H., and Youn, H. (2016). Technological novelty proile and invention's future impact. \emph{EPJ Data Science}, \bold{5(1)}:1--15 \cr
+Kim, D., Cerigo, D. B., Jeong, H., and Youn, H. (2016). Technological novelty proile and invention's future impact. \emph{EPJ Data Science}, \bold{5} (1):1--15 \cr
 \cr
-Teece, D. J., Rumelt, R., Dosi, G., and Winter, S. (1994). Understanding corporate coherence. Theory and evidence. \emph{Journal of Economic Behavior and Organization}, \bold{23(1)}:1--30 \cr
+Teece, D. J., Rumelt, R., Dosi, G., and Winter, S. (1994). Understanding corporate coherence. Theory and evidence. \emph{Journal of Economic Behavior and Organization}, \bold{23} (1):1--30 \cr
 \cr
-Uzzi, B., Mukherjee, S., Stringer, M., and Jones, B. (2013). Atypical Combinations and Scientific Impact. \emph{Science}, \bold{342(6157)}:468--472
+Uzzi, B., Mukherjee, S., Stringer, M., and Jones, B. (2013). Atypical Combinations and Scientific Impact. \emph{Science}, \bold{342} (6157):468--472
 }
 \seealso{
 \code{\link{relatedness.density}}, \code{\link{co.occurence}}
