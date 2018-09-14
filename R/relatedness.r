@@ -34,6 +34,8 @@
 #' Steijn, M.P.A. (2017) Improvement on the association strength: implementing probability measures based on combinations without repetition, \emph{Working Paper, Utrecht University}
 
 "relatedness" <- function(mat, method = "prob") {
+  
+  method <- tolower(method)
 
   Cij = mat
   diag(Cij) <- 0
@@ -42,36 +44,41 @@
   Si <- matrix(Si,nrow=length(Si),ncol=length(Si),byrow=TRUE)
   Sj <- matrix(Sj,nrow=length(Sj),ncol=length(Sj),byrow=FALSE)
   T<-(sum(Cij))
-  SM <- Cij/(((Si/T)*(Sj/(T-Si))+(Sj/T)*(Si/(T-Sj)))*(T/2))
-  SA <- (Cij/T)/ ((Si/T) * (Sj/T))
-  SC <- (Cij)/ sqrt (Si * Sj)
-  SJ <- (Cij)/ (Si + Sj - Cij)
-
-  SM[is.na(SM)] <- 0
-  SA[is.na(SA)] <- 0
-  SC[is.na(SC)] <- 0
-  SJ[is.na(SJ)] <- 0
-
-  diag(SM) <- 0
-  diag(SA) <- 0
-  diag(SC) <- 0
-  diag(SJ) <- 0
-
+  
   if (method == "prob") {
-  return(SM)
+    
+    SM <- Cij/(((Si/T)*(Sj/(T-Si))+(Sj/T)*(Si/(T-Sj)))*(T/2))
+    SM[is.na(SM)] <- 0
+    diag(SM) <- 0
+    return(SM)
+    
+  } else if (method == "association") {
+    
+    SA <- (Cij/T)/ ((Si/T) * (Sj/T))
+    SA[is.na(SA)] <- 0
+    diag(SA) <- 0
+    return(SA)
+    
+  } else if (method == "cosine") {
+
+    SC <- (Cij)/ sqrt (Si * Sj)
+    SC[is.na(SC)] <- 0
+    diag(SC) <- 0
+    return(SC)
+    
+  } else if (method == "jaccard") {
+    
+    SJ <- (Cij)/ (Si + Sj - Cij)
+    SJ[is.na(SJ)] <- 0
+    diag(SJ) <- 0
+    return(SJ)
+
+  } else {
+    
+    stop("Unknown value for argument 'method'")
+
   }
 
-  if (method == "association") {
-  return(SA)
-  }
-
-  if (method == "cosine") {
-  return(SC)
-  }
-
-  if (method == "Jaccard") {
-  return(SJ)
-  }
 
 }
 
