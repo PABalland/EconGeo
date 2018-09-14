@@ -40,115 +40,28 @@
 #' Balland, P.A. and Rigby, D. (2017) The Geography of Complex Knowledge, \emph{Economic Geography} \strong{93} (1): 1-23.
 
 
-"KCI"<- function(mat, RCA = FALSE) {
-
-  # remove null observations
+KCI <- function (mat, RCA = FALSE) {
+  
   mat <- mat[rowSums(mat) > 0, ]
   mat <- mat[, colSums(mat) > 0]
-  mat
-
-
-
+  
   if (RCA) {
-    share_tech_city <- mat / rowSums (mat)
-    share_tech_total <- colSums (mat) / sum (mat)
-    LQ <- t(t(share_tech_city)/ share_tech_total)
-    LQ[is.na(LQ)] <- 0
-    LQ[LQ < 1] <- 0
-    LQ[LQ > 1] <- 1
-    mat <- LQ
-
-  # compute the share of a tech in a city's portfolio
-  # markov chain - row stochastic
-  C = mat / rowSums(mat)
-  C
-
-  # sum of the rows = 1
-  rowSums(C)
-
-  # compute the share of a city in the overall production of a tech
-  # markov chain - row stochastic
-  T = t(mat)/colSums(mat)
-  T
-
-  # sum of the rows = 1
-  rowSums(T)
-
-  # multiplying C by T gives a city-city Markov chain (row stochastic)
-  CC <- round(C %*% T,4)
-  CC
-
-  # sum of the rows = 1
-  rowSums(CC)
-
-  #  calculate the eigenvalues and eigenvectors
-  e = eigen(CC)
-  e
-
-  # the dominant eigenvalue of a stochastic matrix is 1
-  # The second eigenvalue is important here
-  # it governs the rate at which the random process given by
-  # the stochastic matrix converges to its stationary distribution
-
-  v <- e$vec[,2]
-  v
-
-  KCI <- as.numeric(v) / sum(as.numeric(v))
-  KCI
-
-  # eigenvectors do not have a sign
-  # we make sure to choose the eigen that correlates with diversity
-  if(cor(KCI, MORc(mat, steps = 20), use="pairwise.complete.obs") < 0) KCI <- KCI * (-1)
-
-
-
-  } else {
-  # compute the share of a tech in a city's portfolio
-  # markov chain - row stochastic
-  C = mat / rowSums(mat)
-  C
-
-  # sum of the rows = 1
-  rowSums(C)
-
-  # compute the share of a city in the overall production of a tech
-  # markov chain - row stochastic
-  T = t(mat)/colSums(mat)
-  T
-
-  # sum of the rows = 1
-  rowSums(T)
-
-  # multiplying C by T gives a city-city Markov chain (row stochastic)
-  CC <- round(C %*% T,4)
-  CC
-
-  # sum of the rows = 1
-  rowSums(CC)
-
-  #  calculate the eigenvalues and eigenvectors
-  e = eigen(CC)
-  e
-
-  # the dominant eigenvalue of a stochastic matrix is 1
-  # The second eigenvalue is important here
-  # it governs the rate at which the random process given by
-  # the stochastic matrix converges to its stationary distribution
-
-  v <- e$vec[,2]
-  v
-
-  KCI <- as.numeric(v) / sum(as.numeric(v))
-  KCI
-
-  # eigenvectors do not have a sign
-  # we make sure to choose the eigen that correlates with diversity
-  if(cor(KCI, MORc(mat, steps = 20), use="pairwise.complete.obs") < 0) KCI <- KCI * (-1)
-
-
+    mat <- RCA(mat, binary = TRUE)
   }
-  return (KCI)
-
+  
+  rs_mat <- mat/rowSums(mat)
+  cs_mat <- t(mat)/colSums(mat)
+  CC     <- round(rs_mat %*% cs_mat, 4)
+  e      <- eigen(CC)
+  v      <- as.numeric(e$vec[, 2])
+  
+  KCI    <- v/sum(v)
+  
+  if (isTRUE(cor(KCI, MORc(mat, steps = 20), use = "pairwise.complete.obs") < 0)) {
+    KCI <- -KCI
+  } 
+  
+  return(KCI)
 }
 
 
