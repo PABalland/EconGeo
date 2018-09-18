@@ -13,27 +13,25 @@
 #' colnames(mat) <- c ("I1", "I2", "I3", "I4")
 #'
 #' ## run the function
-#' RCA (mat)
-#' RCA (mat, binary = TRUE)
+#' RCA(mat)
+#' RCA(mat, binary = TRUE)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{location.quotient}}
 #' @references Balassa, B. (1965) Trade Liberalization and Revealed Comparative Advantage, \emph{The Manchester School} \strong{33}: 99-123.
 
-RCA <- function(mat, binary = FALSE) {
-  mat = as.matrix (mat)
-  share_tech_city <- mat / rowSums (mat)
-  share_tech_total <- colSums (mat) / sum (mat)
+RCA <- function (mat, binary = FALSE) {
+  mat <- as.matrix(mat)
+  share_tech_city  <- mat/rowSums(mat)
+  share_tech_total <- colSums(mat)/sum(mat)
+  
+  LQ <- t(t(share_tech_city)/share_tech_total)
+  LQ[is.na(LQ)] <- 0
+  
   if (binary) {
-    LQ <- t(t(share_tech_city)/ share_tech_total)
-    LQ[is.na(LQ)] <- 0
     LQ[LQ < 1] <- 0
     LQ[LQ > 1] <- 1
-  } else {
-  LQ <- t(t(share_tech_city)/ share_tech_total)
-  LQ[is.na(LQ)] <- 0
-  }
-  return (LQ)
-
+  } 
+  return(LQ)
 }
 
 
