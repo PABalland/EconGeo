@@ -32,27 +32,21 @@ co.occurrence <- function(mat, diagonal = FALSE, list = FALSE) {
 
   library (Matrix)
 
+  mat = as.matrix (mat)
+
   if (list) {
-  mat = as.matrix (mat)
-  mat <- get.matrix (mat, sparse = TRUE)
-
+    mat <- get.matrix (mat, sparse = TRUE)
   } else {
-  mat = as.matrix (mat)
-  mat <- Matrix(mat, sparse=TRUE)
-
+    mat <- Matrix(mat, sparse=TRUE)
   }
 
-  cooc =   mat %*% Matrix::t(mat)
+  cooc = mat %*% Matrix::t(mat)
   cooc = as.matrix (cooc)
 
   if (!diagonal) {
-
-  diag(cooc) <- 0
-
-  } else {
-
-  return (cooc)
+    diag(cooc) <- 0
   }
+  
   return (cooc)
 
 }
