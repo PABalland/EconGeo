@@ -23,10 +23,11 @@
 
 get.matrix <- function(data, sparse = FALSE) {
 
-  data$azertyuiop <- paste(data[,1],data[,2], sep = ".")
-  data$qsdfghjklm <- ave(data[,3], data[,4], FUN=sum)
+  data$azertyuiop <- paste(data[, 1], data[, 2], sep = ".")
+  data$qsdfghjklm <- ave(data[, 3], data[, 4], FUN = sum)
+  data[, 3] = NULL
   data <- data[!duplicated(data), ]
-  data[,3:4] <- NULL
+  data[, 3] <- NULL
 
   if (sparse) {
   library (Matrix)
