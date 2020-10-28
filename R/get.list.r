@@ -20,7 +20,7 @@
 
 get.list <- function(mat) {
   library (reshape)
-  list <- melt(mat)
+  list <- reshape::melt(mat)
   colnames (list) <- c ("Region", "Industry", "Count")
   return (list)
 }
