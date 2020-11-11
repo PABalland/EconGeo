@@ -31,6 +31,7 @@ RCA <- function (mat, binary = FALSE) {
     LQ[LQ < 1] <- 0
     LQ[LQ > 1] <- 1
   } 
+  LQ = round (LQ, digits = 2)
   return(LQ)
 }
 
