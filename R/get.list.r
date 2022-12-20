@@ -18,9 +18,13 @@
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{get.matrix}}
 
-get.list <- function(mat) {
-  library (reshape)
-  list <- reshape::melt(mat)
-  colnames (list) <- c ("Region", "Industry", "Count")
-  return (list)
+get.list <- function (mat) {
+    library(reshape)
+    dn <- dimnames(mat)
+    char <- sapply(dn, is.character)
+    meltnew <- reshape::melt.matrix
+    body(meltnew)[8][[1]] <- dn[char] <- lapply(dn[char], type.convert, as.is = TRUE)
+    list <- meltnew(mat)
+    colnames(list) <- c("Region", "Industry", "Count")
+    return(list)
 }
