@@ -7,21 +7,19 @@
 #' @examples
 #' ## generate a region - industry matrix
 #' set.seed(31)
-#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
-#' rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-#' colnames(mat) <- c ("I1", "I2", "I3", "I4")
+#' mat <- matrix(sample(0:100, 20, replace = TRUE), ncol = 4)
+#' rownames(mat) <- c("R1", "R2", "R3", "R4", "R5")
+#' colnames(mat) <- c("I1", "I2", "I3", "I4")
 #'
 #' ## run the function
-#' Herfindahl (mat)
+#' herfindahl(mat)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
-#' @seealso \code{\link{Krugman.index}}
+#' @seealso \code{\link{krugman_index}}
 #' @references Herfindahl, O.C. (1959) \emph{Copper Costs and Prices: 1870-1957}. Baltimore: The Johns Hopkins Press. \cr
 #' \cr
 #' Hirschman, A.O. (1945) \emph{National Power and the Structure of Foreign Trade}, Berkeley and Los Angeles: University of California Press.
 
-Herfindahl <- function(mat) {
-  Herfindahl <- rowSums(mat*mat)/(rowSums(mat)*rowSums(mat))
-  return (Herfindahl)
+herfindahl <- function(mat) {
+  herfindahl_v <- rowSums(mat * mat) / (rowSums(mat) * rowSums(mat))
+  return(herfindahl_v)
 }
-
-

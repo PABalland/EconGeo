@@ -15,15 +15,12 @@ This function computes the Shannon entropy index from regions - industries matri
 \examples{
 ## generate a region - industry matrix
 set.seed(31)
-mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
-rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-colnames(mat) <- c ("I1", "I2", "I3", "I4")
+mat <- matrix(sample(0:100, 20, replace = TRUE), ncol = 4)
+rownames(mat) <- c("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c("I1", "I2", "I3", "I4")
 
 ## run the function
-entropy (mat)
-}
-\author{
-Pierre-Alexandre Balland \email{p.balland@uu.nl}
+entropy(mat)
 }
 \references{
 Shannon, C.E., Weaver, W. (1949) \emph{The Mathematical Theory of Communication}. Univ of Illinois Press. \cr
@@ -33,5 +30,7 @@ Frenken, K., Van Oort, F. and Verburg, T. (2007) Related variety, unrelated vari
 \seealso{
 \code{\link{diversity}}
 }
+\author{
+Pierre-Alexandre Balland \email{p.balland@uu.nl}
+}
 \keyword{diversity}
-

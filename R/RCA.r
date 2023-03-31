@@ -8,31 +8,29 @@
 #' @examples
 #' ## generate a region - industry matrix
 #' set.seed(31)
-#' mat <- matrix(sample(0:100,20,replace=T), ncol = 4)
-#' rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-#' colnames(mat) <- c ("I1", "I2", "I3", "I4")
+#' mat <- matrix(sample(0:100, 20, replace = TRUE), ncol = 4)
+#' rownames(mat) <- c("R1", "R2", "R3", "R4", "R5")
+#' colnames(mat) <- c("I1", "I2", "I3", "I4")
 #'
 #' ## run the function
-#' RCA(mat)
-#' RCA(mat, binary = TRUE)
+#' rca(mat)
+#' rca(mat, binary = TRUE)
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
-#' @seealso \code{\link{location.quotient}}
+#' @seealso \code{\link{location_quotient}}
 #' @references Balassa, B. (1965) Trade Liberalization and Revealed Comparative Advantage, \emph{The Manchester School} \strong{33}: 99-123.
 
-RCA <- function (mat, binary = FALSE) {
+rca <- function(mat, binary = FALSE) {
   mat <- as.matrix(mat)
-  share_tech_city  <- mat/rowSums(mat)
-  share_tech_total <- colSums(mat)/sum(mat)
-  
-  LQ <- t(t(share_tech_city)/share_tech_total)
-  LQ[is.na(LQ)] <- 0
-  
+  share_tech_city <- mat / rowSums(mat)
+  share_tech_total <- colSums(mat) / sum(mat)
+
+  lq <- t(t(share_tech_city) / share_tech_total)
+  lq[is.na(lq)] <- 0
+
   if (binary) {
-    LQ[LQ < 1] <- 0
-    LQ[LQ > 1] <- 1
-  } 
-  LQ = round (LQ, digits = 2)
-  return(LQ)
+    lq[lq < 1] <- 0
+    lq[lq > 1] <- 1
+  }
+  lq <- round(lq, digits = 2)
+  return(lq)
 }
-
-

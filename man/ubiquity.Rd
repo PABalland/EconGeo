@@ -4,12 +4,12 @@
 \alias{ubiquity}
 \title{Compute a simple measure of ubiquity of industries}
 \usage{
-ubiquity(mat, RCA = FALSE)
+ubiquity(mat, rca = FALSE)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns}
 
-\item{RCA}{Logical; should the index of relative comparative advantage (RCA - also refered to as location quotient) first be computed? Defaults to FALSE (a binary matrix - 0/1 - is expected as an input), but can be set to TRUE if the index of relative comparative advantage first needs to be computed}
+\item{rca}{Logical; should the index of relative comparative advantage (RCA - also refered to as location quotient) first be computed? Defaults to FALSE (a binary matrix - 0/1 - is expected as an input), but can be set to TRUE if the index of relative comparative advantage first needs to be computed}
 }
 \description{
 This function computes a simple measure of ubiquity of industries by counting the number of regions in which an industry can be found (location quotient > 1) from regions - industries (incidence) matrices
@@ -17,30 +17,29 @@ This function computes a simple measure of ubiquity of industries by counting th
 \examples{
 ## generate a region - industry matrix with full count
 set.seed(31)
-mat <- matrix(sample(0:10,20,replace=T), ncol = 4)
-rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-colnames(mat) <- c ("I1", "I2", "I3", "I4")
+mat <- matrix(sample(0:10, 20, replace = TRUE), ncol = 4)
+rownames(mat) <- c("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c("I1", "I2", "I3", "I4")
 
 ## run the function
-ubiquity (mat, RCA = TRUE)
+ubiquity(mat, rca = TRUE)
 
-## generate a region - industry matrix in which cells represent the presence/absence of a RCA
+## generate a region - industry matrix in which cells represent the presence/absence of a rca
 set.seed(31)
-mat <- matrix(sample(0:1,20,replace=T), ncol = 4)
-rownames(mat) <- c ("R1", "R2", "R3", "R4", "R5")
-colnames(mat) <- c ("I1", "I2", "I3", "I4")
+mat <- matrix(sample(0:1, 20, replace = TRUE), ncol = 4)
+rownames(mat) <- c("R1", "R2", "R3", "R4", "R5")
+colnames(mat) <- c("I1", "I2", "I3", "I4")
 
 ## run the function
-ubiquity (mat)
-}
-\author{
-Pierre-Alexandre Balland \email{p.balland@uu.nl}
+ubiquity(mat)
 }
 \references{
 Balland, P.A. and Rigby, D. (2017) The Geography of Complex Knowledge, \emph{Economic Geography} \strong{93} (1): 1-23.
 }
 \seealso{
-\code{\link{diversity}} \code{\link{location.quotient}}
+\code{\link{diversity}} \code{\link{location_quotient}}
+}
+\author{
+Pierre-Alexandre Balland \email{p.balland@uu.nl}
 }
 \keyword{ubiquity}
-
