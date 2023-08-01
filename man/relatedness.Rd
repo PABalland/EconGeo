@@ -18,21 +18,16 @@ This function computes the relatedness between entities (industries, technologie
 ## generate an industry - industry matrix in which cells give the number of co-occurences
 ## between two industries
 set.seed(31)
-mat <- matrix(sample(0:10,36,replace=T), ncol = 6)
+mat <- matrix(sample(0:10, 36, replace = TRUE), ncol = 6)
 mat[lower.tri(mat, diag = TRUE)] <- t(mat)[lower.tri(t(mat), diag = TRUE)]
-rownames(mat) <- c ("I1", "I2", "I3", "I4", "I5", "I6")
-colnames(mat) <- c ("I1", "I2", "I3", "I4", "I5", "I6")
+rownames(mat) <- c("I1", "I2", "I3", "I4", "I5", "I6")
+colnames(mat) <- c("I1", "I2", "I3", "I4", "I5", "I6")
 
 ## run the function
-relatedness (mat)
-relatedness (mat, method = "association")
-relatedness (mat, method = "cosine")
-relatedness (mat, method = "Jaccard")
-}
-\author{
-Pierre-Alexandre Balland \email{p.balland@uu.nl} \cr
-Joan Crespo \email{J.Crespo@uu.nl} \cr
-Mathieu Steijn \email{M.P.A.Steijn@uu.nl}
+relatedness(mat)
+relatedness(mat, method = "association")
+relatedness(mat, method = "cosine")
+relatedness(mat, method = "jaccard")
 }
 \references{
 van Eck, N.J. and Waltman, L. (2009) How to normalize cooccurrence data? An analysis of some well-known similarity measures, \emph{Journal of the American Society for Information Science and Technology} \strong{60} (8): 1635-1651 \cr
@@ -46,7 +41,11 @@ Balland, P.A. (2016) Relatedness and the Geography of Innovation, in: R. Shearmu
 Steijn, M.P.A. (2017) Improvement on the association strength: implementing probability measures based on combinations without repetition, \emph{Working Paper, Utrecht University}
 }
 \seealso{
-\code{\link{relatedness.density}}, \code{\link{co.occurence}}
+\code{\link{relatedness_density}}, \code{\link{co_occurrence}}
+}
+\author{
+Pierre-Alexandre Balland \email{p.balland@uu.nl} \cr
+Joan Crespo \email{J.Crespo@uu.nl} \cr
+Mathieu Steijn \email{M.P.A.Steijn@uu.nl}
 }
 \keyword{relatedness}
-

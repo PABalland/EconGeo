@@ -1,8 +1,8 @@
 Package: EconGeo
 Title: Computing Key Indicators of the Spatial Distribution of Economic
     Activities
-Version: 1.3
-Date: 2017
+Version: 2.0
+Date: 2023-04-01
 Author: Pierre-Alexandre Balland <p.balland@uu.nl>
 Maintainer: Pierre-Alexandre Balland <p.balland@uu.nl>
 Description: Functions to compute a series of indices commonly used in the fields of economic geography, economic complexity, and evolutionary economics to describe the location, distribution, spatial organization, structure, and complexity of economic activities. Functions include basic spatial indicators such as the location quotient, the Krugman specialization index, the Herfindahl or the Shannon entropy indices but also more advanced functions to compute different forms of normalized relatedness between economic activities or network-based measures of economic complexity. Most of the functions use matrix calculus and are based on bipartite (incidence) matrices consisting of region - industry pairs.
@@ -12,8 +12,8 @@ Depends:
 Imports:
     Matrix,
     reshape
-License: GPL-2 | GPL-3 [expanded from: GPL]
+License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1.9000
-BugReports: http://github.com/PABalland/EconGeo/issues
+RoxygenNote: 7.2.3
+BugReports: https://github.com/PABalland/EconGeo/issues
