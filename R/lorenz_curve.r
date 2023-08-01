@@ -2,8 +2,13 @@
 #'
 #' This function plots a Lorenz curve from regional industrial counts. This curve gives an indication of the unequal distribution of an industry accross regions.
 #' @param mat An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).
-#' @param pdf Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Lorenz curves will be compiled and saved to your current working directory.
+#' @param pdf Logical; shall a pdf be saved?  Defaults to FALSE. If set to TRUE, a pdf with all will be compiled and saved to R's temp dir if no 'pdf_location' is specified.
+#' @param pdf_location Output location of pdf file
 #' @param plot Logical; shall the curve be automatically plotted? Defaults to TRUE. If set to TRUE, the function will return x y coordinates that you can latter use to plot and customize the curve.
+#' @return If `plot = FALSE`, the function returns a list with two components:
+#'   - `cum.reg`: A vector of cumulative proportions of regions.
+#'   - `cum.out`: A vector of cumulative proportions of industrial output.
+#' If `plot = TRUE`, the function generates a plot of the Lorenz curve and does not return a value.
 #' @keywords concentration inequality
 #' @export
 #' @examples
@@ -12,7 +17,6 @@
 #'
 #' ## run the function
 #' lorenz_curve (ind)
-#' lorenz_curve (ind, pdf = FALSE)
 #' lorenz_curve (ind, plot = FALSE)
 #'
 #' ## generate a region - industry matrix
@@ -27,46 +31,48 @@
 #'
 #' ## run the function
 #' lorenz_curve (mat)
-#' lorenz_curve (mat, pdf = FALSE)
 #' lorenz_curve (mat, plot = FALSE)
 #'
 #' ## run the function by aggregating all industries
 #' lorenz_curve (rowSums(mat))
-#' lorenz_curve (rowSums(mat), pdf = FALSE)
 #' lorenz_curve (rowSums(mat), plot = FALSE)
 #'
 #' ## run the function for industry #1 only (perfect equality)
 #' lorenz_curve (mat[,1])
-#' lorenz_curve (mat[,1], pdf = FALSE)
 #' lorenz_curve (mat[,1], plot = FALSE)
 #'
 #' ## run the function for industry #2 only (perfect equality)
 #' lorenz_curve (mat[,2])
-#' lorenz_curve (mat[,2], pdf = FALSE)
 #' lorenz_curve (mat[,2], plot = FALSE)
 #'
 #' ## run the function for industry #3 only (perfect unequality)
 #' lorenz_curve (mat[,3])
-#' lorenz_curve (mat[,3], pdf = FALSE)
 #' lorenz_curve (mat[,3], plot = FALSE)
 #'
 #' ## run the function for industry #4 only (top 40% produces 100% of the output)
 #' lorenz_curve (mat[,4])
-#' lorenz_curve (mat[,4], pdf = FALSE)
 #' lorenz_curve (mat[,4], plot = FALSE)
 #'
 #' ## Compare the distribution of the #industries
-#' par(mfrow=c(2,2))
+#' oldpar <- par(mfrow = c(2, 2))  # Save the current graphical parameter settings
 #' lorenz_curve (mat[,1])
 #' lorenz_curve (mat[,2])
 #' lorenz_curve (mat[,3])
 #' lorenz_curve (mat[,4])
+#' par(oldpar)  # Reset the graphical parameters to their original values
+#'
+#' ## Save output as pdf
+#' lorenz_curve (mat, pdf = TRUE)
+#'
+#' ## To specify an output directory for the pdf,
+#' ## specify 'pdf_location', for instance as '/Users/jones/lorenz_curve.pdf'
+#' ## lorenz_curve(mat, pdf = TRUE, pdf_location = '/Users/jones/lorenz_curve.pdf')
 #'
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{hoover_gini}}, \code{\link{locational_gini}}, \code{\link{locational_gini_curve}}, \code{\link{hoover_curve}}, \code{\link{gini}}
 #' @references Lorenz, M. O. (1905) Methods of measuring the concentration of wealth, \emph{Publications of the American Statistical Association} \strong{9}: 209–219
 
-lorenz_curve <- function(mat, pdf = FALSE, plot = TRUE) {
+lorenz_curve <- function(mat, plot = TRUE, pdf = TRUE, pdf_location = NULL) {
   if (!plot) {
     mat <- as.matrix(mat)
 
@@ -115,12 +121,18 @@ lorenz_curve <- function(mat, pdf = FALSE, plot = TRUE) {
         hc(mat, i)
       }
     } else {
-      pdf("lorenz_curve.pdf")
+      if (!is.null(pdf_location)) {
+        pdf(pdf_location)
+        message("Lorenz curve PDF saved to:", pdf_location)
+      } else {
+        pdf_location <- file.path(tempdir(), "lorenz_curve.pdf")
+        pdf(pdf_location)
+        message("No 'pdf_location' specified: lorenz_curve.pdf saved to R's temporary directory.")
+      }
       for (i in seq_len(ncol(mat))) {
         hc(mat, i)
       }
       dev.off()
-      print("lorenz_curve.pdf has been saved to your current working directory")
     }
   }
 }

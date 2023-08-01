@@ -4,6 +4,7 @@
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param vec A vector that will be used to compute the weighted average for each industry/region
 #' @param reg Logical; Shall the weighted average for regions be returned? Default to TRUE (requires a vector of industry value) but can be set to FALSE (requires a vector of region value) if the weighted average for industries should be returned
+#' @return A numeric vector representing the weighted average of regions or industries, depending on the value of the `reg` argument. If `reg = TRUE`, the weighted average for regions is returned; if `reg = FALSE`, the weighted average for industries is returned.
 #' @keywords diversity specialization
 #' @export
 #' @examples

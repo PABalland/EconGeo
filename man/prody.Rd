@@ -11,6 +11,9 @@ prody(mat, vec)
 
 \item{vec}{A vector that gives GDP, R&D, education or any other relevant regional attribute that will be used to compute the weighted average for each industry}
 }
+\value{
+A numeric vector representing the prody index of industries. Each value in the vector corresponds to the associated income level for an industry.
+}
 \description{
 This function computes the prody index of industries from (incidence) regions - industries matrices, as proposed by Hausmann, Hwang & Rodrik (2007). The index gives an associated income level for each industry. It represents a weighted average of per-capita GDPs (but GDP can be replaced by R&D, education...), where the weights correspond to the revealed comparative advantage of each region in a given industry (or sector, technology, ...).
 }

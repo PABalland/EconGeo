@@ -11,6 +11,9 @@ ubiquity(mat, rca = FALSE)
 
 \item{rca}{Logical; should the index of relative comparative advantage (RCA - also refered to as location quotient) first be computed? Defaults to FALSE (a binary matrix - 0/1 - is expected as an input), but can be set to TRUE if the index of relative comparative advantage first needs to be computed}
 }
+\value{
+A numeric vector representing the measure of ubiquity of industries. Each element of the vector corresponds to the number of regions in which an industry can be found (location quotient > 1).
+}
 \description{
 This function computes a simple measure of ubiquity of industries by counting the number of regions in which an industry can be found (location quotient > 1) from regions - industries (incidence) matrices
 }

@@ -9,6 +9,9 @@ growth_list(...)
 \arguments{
 \item{...}{Incidence matrices with regions in rows and industries in columns (period ... - optional)}
 }
+\value{
+A data frame of industrial growth in regions
+}
 \description{
 This function generates a data frame of industrial growth in regions from multiple regions - industries matrices (same matrix composition for the different periods). In this function, the maximum number of periods is limited to 20.
 }

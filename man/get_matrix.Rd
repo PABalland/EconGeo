@@ -11,6 +11,9 @@ get_matrix (my_data, sparse = FALSE)
 
 \item{sparse}{Logical; shall the returned output be a sparse matrix? Defaults to FALSE, but can be set to TRUE if the dataset is very large}
 }
+\value{
+A regions - industries matrix in either dense or sparse format, depending on the value of the "sparse" parameter
+}
 \description{
 This function creates regions - industries (incidence) matrices from regular data frames (long to wide format) using the reshape2 package or the Matrix package
 }

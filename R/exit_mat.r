@@ -3,6 +3,7 @@
 #' This function generates a matrix of exit events from two regions - industries matrices (different matrix compositions are allowed)
 #' @param mat1 An incidence matrix with regions in rows and industries in columns (period 1)
 #' @param mat2 An incidence matrix with regions in rows and industries in columns (period 2)
+#' @return A matrix representing the exit events from two regions - industries matrices, with rows representing regions and columns representing industries
 #' @keywords diversification
 #' @export
 #' @examples

@@ -6,6 +6,7 @@
 #'
 #' @param mat An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).
 #' @param pop A vector of population regional count; if this argument is missing an equal distribution of the reference group will be assumed.
+#' @return The Hoover index value(s) as either a numeric value or a data frame with two columns: "Industry" (names of the industries) and "hoover_index" (corresponding Hoover index values).
 #' @keywords concentration inequality
 #' @export
 #' @examples

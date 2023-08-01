@@ -9,6 +9,9 @@ exit_list(...)
 \arguments{
 \item{...}{Incidence matrices with regions in rows and industries in columns (period ... - optional)}
 }
+\value{
+A data frame representing the exit events from multiple regions - industries matrices, with columns "region" (representing the region), "industry" (representing the industry), "exit" (representing the exit event), and "period" (representing the period)
+}
 \description{
 This function generates a data frame of exit events from multiple regions - industries matrices (different matrix compositions are allowed). In this function, the maximum number of periods is limited to 20.
 }

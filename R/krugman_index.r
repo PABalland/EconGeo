@@ -2,6 +2,7 @@
 #'
 #' This function computes the Krugman index from regions - industries matrices. The higher the coefficient, the greater the regional specialization. This index is often referred to as the Krugman specialisation index and measures the distance between the distributions of industry shares in a region and at a more aggregated level (country for instance).
 #' @param mat An incidence matrix with regions in rows and industries in columns
+#' @return A vector representing the Krugman index of regional specialization computed from the regions - industries matrix.
 #' @keywords specialization
 #' @export
 #' @examples

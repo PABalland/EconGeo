@@ -3,6 +3,7 @@
 #' This function computes an index of revealed comparative advantage (RCA) from (incidence) regions - industries matrices. The numerator is the share of a given industry in a given region. The denominator is the share of a this industry in a larger economy (overall country for instance). This index is also refered to as a location quotient, or the Hoover-Balassa index.
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param binary Logical; shall the returned output be a dichotomized version (0/1) of the RCA? Defaults to FALSE (the full values of the RCA will be returned), but can be set to TRUE (RCA above 1 will be set to 1 & RCA values below 1 will be set to 0)
+#' @return A matrix representing the index of revealed comparative advantage (RCA) or location quotient. Each cell in the matrix corresponds to the RCA value for a specific region and industry. If the `binary` parameter is set to TRUE, the returned matrix will be dichotomized, with values above 1 set to 1 and values below 1 set to 0.
 #' @keywords specialization
 #' @export
 #' @examples

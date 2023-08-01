@@ -11,6 +11,9 @@ exit_mat(mat1, mat2)
 
 \item{mat2}{An incidence matrix with regions in rows and industries in columns (period 2)}
 }
+\value{
+A matrix representing the exit events from two regions - industries matrices, with rows representing regions and columns representing industries
+}
 \description{
 This function generates a matrix of exit events from two regions - industries matrices (different matrix compositions are allowed)
 }

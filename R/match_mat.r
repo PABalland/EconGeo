@@ -4,6 +4,7 @@
 #' @param fill A matrix that will be used to populate the matrix output
 #' @param dim A matrix that will be used to determine the dimensions of the matrix output
 #' @param missing Logical; Shall the cells of the non matching rows/columns set to NA? Default to TRUE but can be set to FALSE to set the cells of the non matching rows/columns to 0 instead.
+#' @return The matrix output with the dimensions rearranged based on the input `dim` matrix.
 #' @keywords data.management
 #' @export
 #' @examples

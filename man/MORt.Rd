@@ -13,6 +13,9 @@ mort(mat, rca = FALSE, steps = 19)
 
 \item{steps}{Number of iteration steps. Defaults to 19, but can be set to 0 to give ubiquity (number of regions that have a RCA in a industry), to 1 to give  the average diversity of the regions that have a RCA in this industry, to 2 to give the average ubiquity of technologies developed in the same regions, or to any other number of steps < or = to 21. Note that above steps = 2 the index will be rescaled from 0 (minimum relative complexity) to 100 (maximum relative complexity).}
 }
+\value{
+If `steps` is set to 0, the function returns a numeric vector representing the ubiquity (number of regions that have a relative comparative advantage) of industries. Otherwise, it returns a numeric vector representing the index of knowledge complexity of industries based on the specified number of iteration steps.
+}
 \description{
 This function computes an index of knowledge complexity of industries using the method of reflection from regions - industries (incidence) matrices. The index has been developed by Hidalgo and Hausmann (2009) for country - product matrices and adapted by Balland and Rigby (2016) to city - technology matrices.
 }

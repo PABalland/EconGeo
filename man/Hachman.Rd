@@ -9,6 +9,9 @@ hachman(mat)
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns}
 }
+\value{
+A vector of Hachman index values indicating the similarity between the industrial distribution of a region and a more global economy
+}
 \description{
 This function computes the Hachman index from regions - industries matrices. The Hachman index indicates how closely the industrial distribution of a region resembles the one of a more global economy (nation, world). The index varies between 0 (extreme dissimilarity between the region and the more global economy) and 1 (extreme similarity between the region and the more global economy)
 }

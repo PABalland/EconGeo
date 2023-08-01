@@ -2,6 +2,7 @@
 #'
 #' This function computes a measure of complexity by normalizing ubiquity of industries. We divide the share of the total count (employment, number of firms, number of patents, ...) in an industry by its share of ubiquity. Ubiquity is given by the number of regions in which an industry can be found (location quotient > 1) from regions - industries (incidence) matrices
 #' @param mat An incidence matrix with regions in rows and industries in columns
+#' @return A numeric vector representing the measure of complexity obtained by normalizing the ubiquity of industries. Each value in the vector corresponds to the normalized complexity score of an industry.
 #' @keywords ubiquity complexity
 #' @export
 #' @examples

@@ -11,6 +11,9 @@ relatedness_density_ext(mat, relatedness)
 
 \item{relatedness}{An adjacency industry - industry matrix indicating the degree of relatedness between industries}
 }
+\value{
+A matrix representing the relatedness density between regions and industries that are not part of the regional portfolio. The values in the matrix indicate the share of industries related to each industry in each region, scaled from 0 to 100. Rows represent regions and columns represent industries. Industries that are part of the regional portfolio are assigned NA.
+}
 \description{
 This function computes the relatedness density between regions and industries that are not part of the regional portfolio from regions - industries (incidence) matrices and industries - industries (adjacency) matrices
 }

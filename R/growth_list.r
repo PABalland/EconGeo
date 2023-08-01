@@ -2,6 +2,7 @@
 #'
 #' This function generates a data frame of industrial growth in regions from multiple regions - industries matrices (same matrix composition for the different periods). In this function, the maximum number of periods is limited to 20.
 #' @param ... Incidence matrices with regions in rows and industries in columns (period ... - optional)
+#' @return A data frame of industrial growth in regions
 #' @keywords growth
 #' @export
 #' @examples
@@ -64,8 +65,8 @@ growth_list <- function(...) {
   period <- 2
 
   for (i in seq(2, num_mats, by = 1)) {
-    bim1 <- get(paste0("mat", i - 1))
-    bim2 <- get(paste0("mat", i))
+    bim1 <- mats[[i - 1]]
+    bim2 <- mats[[i]]
 
     unimat1 <- unimat
     col <- colnames(unimat1)[colnames(unimat1) %in% colnames(bim1)]

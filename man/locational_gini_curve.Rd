@@ -4,12 +4,17 @@
 \alias{locational_gini_curve}
 \title{Plot a locational Gini curve from regions - industries matrices}
 \usage{
-locational_gini_curve(mat, pdf = FALSE)
+locational_gini_curve(mat, pdf = FALSE, pdf_location = NULL)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
 
-\item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all locational Gini curves will be compiled and saved to your current working directory.}
+\item{pdf}{Logical; shall a pdf be saved?  Defaults to FALSE. If set to TRUE, a pdf with all will be compiled and saved to R's temp dir if no 'pdf_location' is specified.}
+
+\item{pdf_location}{Output location of pdf file}
+}
+\value{
+No return value, produces a plot or pdf.
 }
 \description{
 This function plots a locational Gini curve following Krugman from regions - industries matrices.
@@ -33,6 +38,13 @@ colnames(mat) <- c("I1", "I2", "I3", "I4", "I5")
 ## run the function (shows industry #5)
 locational_gini_curve(mat, pdf = FALSE)
 locational_gini_curve(mat, pdf = FALSE)
+
+## Save output as pdf
+locational_gini_curve(mat, pdf = TRUE)
+
+## To specify an output directory for the pdf,
+## specify 'pdf_location', for instance as '/Users/jones/locational_gini_curve.pdf'
+## locational_gini_curve(mat, pdf = TRUE, pdf_location = '/Users/jones/locational_gini_curve.pdf')
 
 }
 \references{

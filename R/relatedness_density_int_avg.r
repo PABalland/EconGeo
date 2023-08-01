@@ -3,6 +3,7 @@
 #' This function computes the average relatedness density within the regional portfolio from regions - industries (incidence) matrices and industries - industries (adjacency) matrices. This is a measure of the technological coherence of the regional industrial structure.
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param relatedness An adjacency industry - industry matrix indicating the degree of relatedness between industries
+#' @return A vector representing the average relatedness density within the regional portfolio. The values in the vector indicate the average relatedness density for each region, scaled from 0 to 100.
 #' @keywords relatedness specialization
 #' @export
 #' @examples

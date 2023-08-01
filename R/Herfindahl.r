@@ -2,6 +2,7 @@
 #'
 #' This function computes the Herfindahl index from regions - industries matrices from (incidence) regions - industries matrices. This index is also known as the  Herfindahl-Hirschman index.
 #' @param mat An incidence matrix with regions in rows and industries in columns
+#' @return A vector of Herfindahl index values indicating the concentration of industries within regions
 #' @keywords specialization concentration
 #' @export
 #' @examples

@@ -2,6 +2,7 @@
 #'
 #' This function computes the average location quotients of regions from (incidence) regions - industries matrices. This index is also referred to as the \emph{coefficient of specialization} (Hoover and Giarratani, 1985).
 #' @param mat An incidence matrix with regions in rows and industries in columns
+#' @return A vector of average location quotients computed for each region from the regions - industries matrix. The average location quotient represents the degree of specialization of each region in different industries.
 #' @keywords specialization concentration
 #' @export
 #' @examples

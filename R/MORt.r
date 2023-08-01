@@ -4,6 +4,7 @@
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param rca Logical; should the index of relative comparative advantage (RCA - also refered to as location quotient) first be computed? Defaults to FALSE (a binary matrix - 0/1 - is expected as an input), but can be set to TRUE if the index of relative comparative advantage first needs to be computed
 #' @param steps Number of iteration steps. Defaults to 19, but can be set to 0 to give ubiquity (number of regions that have a RCA in a industry), to 1 to give  the average diversity of the regions that have a RCA in this industry, to 2 to give the average ubiquity of technologies developed in the same regions, or to any other number of steps < or = to 21. Note that above steps = 2 the index will be rescaled from 0 (minimum relative complexity) to 100 (maximum relative complexity).
+#' @return If `steps` is set to 0, the function returns a numeric vector representing the ubiquity (number of regions that have a relative comparative advantage) of industries. Otherwise, it returns a numeric vector representing the index of knowledge complexity of industries based on the specified number of iteration steps.
 #' @keywords complexity
 #' @export
 #' @examples

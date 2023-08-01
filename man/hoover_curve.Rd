@@ -4,7 +4,7 @@
 \alias{hoover_curve}
 \title{Plot a Hoover curve from regions - industries matrices}
 \usage{
-hoover_curve(mat, pop, plot = TRUE, pdf = FALSE)
+hoover_curve(mat, pop, plot = TRUE, pdf = FALSE, pdf_location = NULL)
 }
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).}
@@ -13,7 +13,12 @@ hoover_curve(mat, pop, plot = TRUE, pdf = FALSE)
 
 \item{plot}{Logical; shall the curve be automatically plotted? Defaults to TRUE. If set to TRUE, the function will return x y coordinates that you can latter use to plot and customize the curve.}
 
-\item{pdf}{Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Hoover curves will be compiled and saved to your current working directory.}
+\item{pdf}{Logical; shall a pdf be saved?  Defaults to FALSE. If set to TRUE, a pdf with all will be compiled and saved to R's temp dir if no 'pdf_location' is specified.}
+
+\item{pdf_location}{Output location of pdf file}
+}
+\value{
+If `plot = FALSE`, a list containing the cumulative distribution of population shares (`cum.reg`) and industry shares (`cum.out`) is returned. If `plot = TRUE`, no return value is specified.
 }
 \description{
 This function plots a Hoover curve from regions - industries matrices.
@@ -40,40 +45,43 @@ colnames(mat) <- c ("I1", "I2", "I3", "I4")
 
 ## run the function
 hoover_curve (mat, pop)
-hoover_curve (mat, pop, pdf = FALSE)
 hoover_curve (mat, pop, plot = FALSE)
 
 ## run the function by aggregating all industries
 hoover_curve (rowSums(mat), pop)
-hoover_curve (rowSums(mat), pop, pdf = FALSE)
 hoover_curve (rowSums(mat), pop, plot = FALSE)
 
 ## run the function for industry #1 only
 hoover_curve (mat[,1], pop)
-hoover_curve (mat[,1], pop, pdf = FALSE)
 hoover_curve (mat[,1], pop, plot = FALSE)
 
 ## run the function for industry #2 only (perfectly proportional to population)
 hoover_curve (mat[,2], pop)
-hoover_curve (mat[,2], pop, pdf = FALSE)
 hoover_curve (mat[,2], pop, plot = FALSE)
 
 ## run the function for industry #3 only (30\% of the pop. produces 100\% of the output)
 hoover_curve (mat[,3], pop)
-hoover_curve (mat[,3], pop, pdf = FALSE)
 hoover_curve (mat[,3], pop, plot = FALSE)
 
 ## run the function for industry #4 only (55\% of the pop. produces 100\% of the output)
 hoover_curve (mat[,4], pop)
-hoover_curve (mat[,4], pop, pdf = FALSE)
 hoover_curve (mat[,4], pop, plot = FALSE)
 
 ## Compare the distribution of the #industries
-par(mfrow=c(2,2))
+oldpar <- par(mfrow = c(2, 2))  # Save the current graphical parameter settings
 hoover_curve (mat[,1], pop)
 hoover_curve (mat[,2], pop)
 hoover_curve (mat[,3], pop)
 hoover_curve (mat[,4], pop)
+par(oldpar)  # Reset the graphical parameters to their original values
+
+## Save output as pdf
+hoover_curve (mat, pop, pdf = TRUE)
+
+## To specify an output directory for the pdf,
+## specify 'pdf_location', for instance as '/Users/jones/hoover_curve.pdf'
+## hoover_curve(mat, pop, pdf = TRUE, pdf_location = '/Users/jones/hoover_curve.pdf')
+
 
 }
 \references{

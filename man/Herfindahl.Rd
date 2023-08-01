@@ -9,6 +9,9 @@ herfindahl(mat)
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns}
 }
+\value{
+A vector of Herfindahl index values indicating the concentration of industries within regions
+}
 \description{
 This function computes the Herfindahl index from regions - industries matrices from (incidence) regions - industries matrices. This index is also known as the  Herfindahl-Hirschman index.
 }

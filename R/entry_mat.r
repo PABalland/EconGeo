@@ -3,6 +3,7 @@
 #' This function generates a matrix of entry events from two regions - industries matrices (different matrix compositions are allowed)
 #' @param mat1 An incidence matrix with regions in rows and industries in columns (period 1)
 #' @param mat2 An incidence matrix with regions in rows and industries in columns (period 2)
+#' @return A matrix representing the entry events from two regions - industries matrices, with rows representing regions and columns representing industries
 #' @keywords diversification
 #' @export
 #' @examples
@@ -41,5 +42,5 @@ entry_mat <- function(mat1, mat2) {
   for (M in a) {
     entry[rownames(M), colnames(M)] <- entry[rownames(M), colnames(M)] + M
   }
-  entry
+  return(entry)
 }

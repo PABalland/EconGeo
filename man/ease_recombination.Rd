@@ -13,6 +13,9 @@ ease_recombination(mat, sparse = FALSE, list = FALSE)
 
 \item{list}{Logical; is the input a list? Defaults to FALSE, but can be set to TRUE if the input matrix is a list}
 }
+\value{
+A data frame with two columns: "tech" representing the technological class and "eor" representing the ease of recombination of the technological class
+}
 \description{
 This function computes the ease of recombination of a given technological class from technological classes - patents (incidence) matrices
 }

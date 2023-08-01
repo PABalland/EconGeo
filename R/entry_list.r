@@ -2,6 +2,7 @@
 #'
 #' This function generates a data frame of entry events from multiple regions - industries matrices (different matrix compositions are allowed). In this function, the maximum number of periods is limited to 20.
 #' @param ... Incidence matrices with regions in rows and industries in columns (period ... - optional)
+#' @return A data frame representing the entry events from multiple regions - industries matrices, with columns "region" (representing the region), "industry" (representing the industry), "entry" (representing the entry event), and "period" (representing the period)
 #' @keywords diversification
 #' @export
 #' @examples
@@ -66,8 +67,8 @@ entry_list <- function(...) {
   period <- 2
 
   for (i in seq(2, num_mats, by = 1)) {
-    bim1 <- get(paste0("mat", i - 1))
-    bim2 <- get(paste0("mat", i))
+    bim1 <- mats[[i - 1]]
+    bim2 <- mats[[i]]
 
     unimat1 <- unimat
     col <- colnames(unimat1)[colnames(unimat1) %in% colnames(bim1)]

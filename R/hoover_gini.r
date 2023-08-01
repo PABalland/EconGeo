@@ -3,6 +3,7 @@
 #' This function computes the Hoover Gini, named after Hedgar hoover_ The Hoover index is a measure of spatial inequality. It ranges from 0 (perfect equality) to 1 (perfect inequality) and is calculated from the Hoover curve associated with a given distribution of population, industries or technologies and a reference category. In this sense, it is closely related to the Gini coefficient and the Hoover index. The numerator is given by the area between the Hoover curve of the distribution and the uniform distribution line (45 degrees line). The denominator is the area under the uniform distribution line (the lower triangle).
 #' @param mat An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).
 #' @param pop A vector of population regional count
+#' @return The Hoover Gini value(s). If the input matrix has a single column, the function returns a numeric value representing the Hoover Gini index. If the input matrix has multiple columns, the function returns a data frame with two columns: "Industry" (names of the industries) and "hoover_gini" (corresponding Hoover Gini values).
 #' @keywords concentration inequality
 #' @export
 #' @examples
