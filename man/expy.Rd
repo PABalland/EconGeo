@@ -11,9 +11,6 @@ expy(mat, vec)
 
 \item{vec}{A vector that gives GDP, R&D, education or any other relevant regional attribute that will be used to compute the weighted average for each industry}
 }
-\value{
-A numeric vector representing the expy index of regions computed from the regions - industries matrix
-}
 \description{
 This function computes the expy index of regions from (incidence) regions - industries matrices, as proposed by Hausmann, Hwang & Rodrik (2007). The index is a measure of the productivity level associated with a region's specialization pattern.
 }

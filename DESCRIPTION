@@ -2,15 +2,10 @@ Package: EconGeo
 Title: Computing Key Indicators of the Spatial Distribution of Economic
     Activities
 Version: 2.0
-Date: 2023-06-22
-Authors@R:
-    c(person(given = "Pierre-Alexandre",
-             family = "Balland",
-             role = c("aut", "cre", "cph"),
-             email = "p.balland@uu.nl",
-             )
-             )
-Description: Computes a series of indices commonly used in the fields of economic geography, economic complexity, and evolutionary economics to describe the location, distribution, spatial organization, structure, and complexity of economic activities. Functions include basic spatial indicators such as the location quotient, the Krugman specialization index, the Herfindahl or the Shannon entropy indices but also more advanced functions to compute different forms of normalized relatedness between economic activities or network-based measures of economic complexity. Most of the functions use matrix calculus and are based on bipartite (incidence) matrices consisting of region - industry pairs. These are described in Balland (2017) <http://econ.geo.uu.nl/peeg/peeg1709.pdf>.
+Date: 2023-04-01
+Author: Pierre-Alexandre Balland <p.balland@uu.nl>
+Maintainer: Pierre-Alexandre Balland <p.balland@uu.nl>
+Description: Functions to compute a series of indices commonly used in the fields of economic geography, economic complexity, and evolutionary economics to describe the location, distribution, spatial organization, structure, and complexity of economic activities. Functions include basic spatial indicators such as the location quotient, the Krugman specialization index, the Herfindahl or the Shannon entropy indices but also more advanced functions to compute different forms of normalized relatedness between economic activities or network-based measures of economic complexity. Most of the functions use matrix calculus and are based on bipartite (incidence) matrices consisting of region - industry pairs.
 URL: https://github.com/PABalland/EconGeo
 Depends:
     R (>= 3.3.1)

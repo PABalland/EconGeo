@@ -2,7 +2,6 @@
 #'
 #' This function computes the Shannon entropy index from regions - industries matrices from (incidence) regions - industries matrices
 #' @param mat An incidence matrix with regions in rows and industries in columns
-#' @return A numeric vector representing the Shannon entropy index computed from the regions - industries matrix
 #' @keywords diversity
 #' @export
 #' @examples

@@ -3,7 +3,6 @@
 #' This function generates a matrix of industrial growth by industries from two regions - industries matrices (same matrix composition from two different periods)
 #' @param mat1 An incidence matrix with regions in rows and industries in columns (period 1)
 #' @param mat2 An incidence matrix with regions in rows and industries in columns (period 2)
-#' @return A matrix of industrial growth by industries
 #' @keywords growth
 #' @export
 #' @examples

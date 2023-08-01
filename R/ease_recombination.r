@@ -4,7 +4,6 @@
 #' @param mat A bipartite adjacency matrix (can be a sparse matrix)
 #' @param sparse Logical; is the input matrix a sparse matrix? Defaults to FALSE, but can be set to TRUE if the input matrix is a sparse matrix
 #' @param list Logical; is the input a list? Defaults to FALSE, but can be set to TRUE if the input matrix is a list
-#' @return A data frame with two columns: "tech" representing the technological class and "eor" representing the ease of recombination of the technological class
 #' @keywords complexity
 #' @export
 #' @examples

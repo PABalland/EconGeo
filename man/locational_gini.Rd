@@ -9,9 +9,6 @@ locational_gini(mat)
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns}
 }
-\value{
-A data frame with two columns: "Industry" and "Loc_gini". The "Industry" column contains the names of the industries, and the "Loc_gini" column contains the locational Gini coefficient computed for each industry from the regions - industries matrix.
-}
 \description{
 This function computes the locational Gini coefficient as proposed by Krugman from regions - industries matrices. The higher the coefficient (theoretical limit = 0.5), the greater the industrial concentration. The locational Gini of an industry that is not localized at all (perfectly spread out) in proportion to overall employment would be 0.
 }

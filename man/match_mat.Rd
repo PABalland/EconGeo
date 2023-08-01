@@ -13,9 +13,6 @@ match_mat(fill, dim, missing = TRUE)
 
 \item{missing}{Logical; Shall the cells of the non matching rows/columns set to NA? Default to TRUE but can be set to FALSE to set the cells of the non matching rows/columns to 0 instead.}
 }
-\value{
-The matrix output with the dimensions rearranged based on the input `dim` matrix.
-}
 \description{
 This function e-arranges the dimension of a matrix based on the dimension of another matrix
 }

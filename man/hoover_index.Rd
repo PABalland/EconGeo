@@ -11,9 +11,6 @@ hoover_index(mat, pop)
 
 \item{pop}{A vector of population regional count; if this argument is missing an equal distribution of the reference group will be assumed.}
 }
-\value{
-The Hoover index value(s) as either a numeric value or a data frame with two columns: "Industry" (names of the industries) and "hoover_index" (corresponding Hoover index values).
-}
 \description{
 This function computes the Hoover index, named after Hedgar Hoover. The Hoover index is a measure of spatial inequality. It ranges from 0 (perfect equality) to 100 (perfect inequality) and is calculated from the Lorenz curve associated with a given distribution of population, industries or technologies. In this sense, it is closely related to the Gini coefficient. The Hoover index represents the maximum vertical distance between the Lorenz curve and the 45 degree line of perfect spatial equality. It indicates the proportion of industries, jobs, or population needed to be transferred from the top to the bottom of the distribution to achieve perfect spatial equality. The Hoover index is also known as the Robin Hood index in studies of income inequality.\cr
 \cr

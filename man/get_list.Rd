@@ -9,9 +9,6 @@ get_list(mat)
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns (or the other way around)}
 }
-\value{
-A data frame with three columns: "Region" (representing the region), "Industry" (representing the industry), and "Count" (representing the count of occurrences)
-}
 \description{
 This function creates regular data frames with three columns (regions, industries, count) from (incidence) matrices (wide to long format) using the reshape2 package
 }

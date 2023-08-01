@@ -9,9 +9,6 @@ inv_norm_ubiquity(mat)
 \arguments{
 \item{mat}{An incidence matrix with regions in rows and industries in columns}
 }
-\value{
-A vector of complexity values computed from the inverse of the normalized ubiquity of industries.
-}
 \description{
 This function computes a measure of complexity from the inverse of the normalized ubiquity of industries. We divide the logarithm of the total count (employment, number of firms, number of patents, ...) in an industry by its ubiquity. Ubiquity is given by the number of regions in which an industry can be found (location quotient > 1) from regions - industries (incidence) matrices
 }

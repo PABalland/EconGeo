@@ -11,9 +11,6 @@ growth_mat(mat1, mat2)
 
 \item{mat2}{An incidence matrix with regions in rows and industries in columns (period 2)}
 }
-\value{
-A matrix of industrial growth in regions from two regions - industries matrices
-}
 \description{
 This function generates a matrix of industrial growth in regions from two regions - industries matrices (same matrix composition from two different periods)
 }
