@@ -3,7 +3,6 @@
 #' This function computes an index of knowledge complexity of industries using the eigenvector method from regions - industries (incidence) matrices. Technically, the function returns the eigenvector associated with the second largest eigenvalue of the projected industry - industry matrix.
 #' @param mat An incidence matrix with regions in rows and industries in columns
 #' @param rca Logical; should the index of relative comparative advantage (RCA - also refered to as location quotient) first be computed? Defaults to FALSE (a binary matrix - 0/1 - is expected as an input), but can be set to TRUE if the index of relative comparative advantage first needs to be computed
-#' @return A numeric vector representing the index of knowledge complexity of industries. The vector contains the values of the eigenvector associated with the second largest eigenvalue of the projected industry - industry matrix.
 #' @keywords complexity
 #' @export
 #' @examples

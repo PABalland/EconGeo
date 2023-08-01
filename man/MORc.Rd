@@ -13,9 +13,6 @@ morc(mat, rca = FALSE, steps = 20)
 
 \item{steps}{Number of iteration steps. Defaults to 20, but can be set to 0 to give diversity (number of industry in which a region has a RCA), to 1 to give  the average ubiquity of the industries in which a region has a RCA, to 2 to give the average diversity of regions that have similar industrial structures, or to any other number of steps < or = to 22. Note that above steps = 2 the index will be rescaled from 0 (minimum relative complexity) to 100 (maximum relative complexity).}
 }
-\value{
-If `steps` is set to 0, the function returns a numeric vector representing the diversification of regions. Otherwise, it returns
-}
 \description{
 This function computes an index of knowledge complexity of regions using the method of reflection from regions - industries (incidence) matrices. The index has been developed by Hidalgo and Hausmann (2009) for country - product matrices and adapted by Balland and Rigby (2016) to city - technology matrices.
 }

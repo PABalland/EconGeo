@@ -13,9 +13,6 @@ modular_complexity(mat, sparse = FALSE, list = FALSE)
 
 \item{list}{Logical; is the input a list? Defaults to FALSE (input = adjacency matrix), but can be set to TRUE if the input is an edge list}
 }
-\value{
-A data frame with columns "patent" and "mod.comp" representing the patents and their corresponding modular complexity values.
-}
 \description{
 This function computes a measure of modular complexity of patent documents from technological classes - patents (incidence) matrices
 }

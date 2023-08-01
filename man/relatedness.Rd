@@ -11,9 +11,6 @@ relatedness(mat, method = "prob")
 
 \item{method}{Which normalization method should be used to compute relatedness? Defaults to "prob", but it can be "association", "cosine" or "Jaccard"}
 }
-\value{
-A matrix representing the relatedness between entities (industries, technologies, etc.) based on their co-occurrence matrix. The specific method of normalization used is determined by the 'method' parameter, which can be "prob" (probability index), "association" (association strength), "cosine" (cosine similarity), or "jaccard" (Jaccard index).
-}
 \description{
 This function computes the relatedness between entities (industries, technologies, ...) from their co-occurence (adjacency) matrix. Different normalization procedures are proposed following van Eck and Waltman (2009): association strength, cosine, Jaccard, and an adapted version of the association strength that we refer to as probability index.
 }

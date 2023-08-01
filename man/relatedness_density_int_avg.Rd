@@ -11,9 +11,6 @@ relatedness_density_int_avg(mat, relatedness)
 
 \item{relatedness}{An adjacency industry - industry matrix indicating the degree of relatedness between industries}
 }
-\value{
-A vector representing the average relatedness density within the regional portfolio. The values in the vector indicate the average relatedness density for each region, scaled from 0 to 100.
-}
 \description{
 This function computes the average relatedness density within the regional portfolio from regions - industries (incidence) matrices and industries - industries (adjacency) matrices. This is a measure of the technological coherence of the regional industrial structure.
 }

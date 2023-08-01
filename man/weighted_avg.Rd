@@ -13,9 +13,6 @@ weighted_avg(mat, vec, reg = TRUE)
 
 \item{reg}{Logical; Shall the weighted average for regions be returned? Default to TRUE (requires a vector of industry value) but can be set to FALSE (requires a vector of region value) if the weighted average for industries should be returned}
 }
-\value{
-A numeric vector representing the weighted average of regions or industries, depending on the value of the `reg` argument. If `reg = TRUE`, the weighted average for regions is returned; if `reg = FALSE`, the weighted average for industries is returned.
-}
 \description{
 This function computes a weighted average of regions or industries from (incidence) regions - industries matrices.
 }

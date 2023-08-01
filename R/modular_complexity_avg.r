@@ -4,7 +4,6 @@
 #' @param mat A bipartite adjacency matrix (can be a sparse matrix)
 #' @param sparse Logical; is the input matrix a sparse matrix? Defaults to FALSE, but can be set to TRUE if the input matrix is a sparse matrix
 #' @param list Logical; is the input a list? Defaults to FALSE (input = adjacency matrix), but can be set to TRUE if the input is an edge list
-#' @return A data frame with columns "tech" and "avg.mod.comp" representing the technologies and their corresponding average modular complexity values.
 #' @keywords complexity
 #' @export
 #' @examples

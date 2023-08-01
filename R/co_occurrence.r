@@ -4,7 +4,6 @@
 #' @param mat An incidence matrix with industries in rows and events in columns
 #' @param diagonal Logical; shall the values in the diagonal of the co-occurrence matrix be included in the output? Defaults to FALSE (values in the diagonal are set to 0), but can be set to TRUE (values in the diagonal reflects in how many events a single industry can be found)
 #' @param list Logical; is the input a list? Defaults to FALSE (input = adjacency matrix), but can be set to TRUE if the input is an edge list
-#' @return The co-occurrence matrix as an R matrix object.
 #' @keywords relatedness
 #' @export
 #' @examples

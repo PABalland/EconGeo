@@ -11,9 +11,6 @@ diversity(mat, rca = FALSE)
 
 \item{rca}{Logical; should the index of relative comparative advantage (RCA - also refered to as location quotient) first be computed? Defaults to FALSE (a binary matrix - 0/1 - is expected as an input), but can be set to TRUE if the index of relative comparative advantage first needs to be computed}
 }
-\value{
-A numeric vector representing the share of a tech in a city's portfolio
-}
 \description{
 This function computes a simple measure of diversity of regions by counting the number of industries in which a region has a relative comparative advantage (location quotient > 1) from regions - industries (incidence) matrices
 }

@@ -2,7 +2,6 @@
 #'
 #' This function computes the Hoover coefficient of specialization from regions - industries matrices. The higher the coefficient, the greater the regional specialization. This index is closely related to the Krugman specialisation index.
 #' @param mat An incidence matrix with regions in rows and industries in columns
-#' @return A vector representing the Hoover coefficient of specialization for each region. The values in the vector indicate the degree of regional specialization, with higher values indicating greater specialization.
 #' @keywords specialization
 #' @export
 #' @examples

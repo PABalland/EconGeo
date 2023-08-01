@@ -3,7 +3,6 @@
 #' This function creates regions - industries (incidence) matrices from regular data frames (long to wide format) using the reshape2 package or the Matrix package
 #' @param my_data is a data frame with three columns (regions, industries, count)
 #' @param sparse Logical; shall the returned output be a sparse matrix? Defaults to FALSE, but can be set to TRUE if the dataset is very large
-#' @return A regions - industries matrix in either dense or sparse format, depending on the value of the "sparse" parameter
 #' @keywords data.management
 #' @usage get_matrix (my_data, sparse = FALSE)
 #' @export

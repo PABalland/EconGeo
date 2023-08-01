@@ -2,7 +2,6 @@
 #'
 #' This function computes the z-score between pairs of technologies from a patent-technology incidence matrix. The z-score is a measure to analyze the co-occurrence of technologies in patent documents (i.e. knowledge combination). It compares the observed number of co-occurrences to what would be expected under the hypothesis that combination is random. A positive z-score indicates a typical co-occurrence which has occurred multiple times before. In contrast, a negative z-socre indicates an atypical co-occurrence. The z-score has been used to estimate the degree of novelty of patents (Kim 2016), scientific publications (Uzzi et al. 2013) or the relatedness between industries (Teece et al. 1994).
 #' @param mat A patent-technology incidence matrix with patents in rows and technologies in columns
-#' @return A matrix of z-scores representing the co-occurrence of technologies in the input incidence matrix. The z-score measures the deviation of the observed co-occurrence from the expected co-occurrence under the assumption of random combination. Positive z-scores indicate typical co-occurrences, while negative z-scores indicate atypical co-occurrences.
 #' @keywords relatedness
 #' @export
 #' @examples

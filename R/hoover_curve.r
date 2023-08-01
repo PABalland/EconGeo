@@ -4,9 +4,7 @@
 #' @param mat An incidence matrix with regions in rows and industries in columns. The input can also be a vector of industrial regional count (a matrix with n regions in rows and a single column).
 #' @param pop A vector of population regional count
 #' @param plot Logical; shall the curve be automatically plotted? Defaults to TRUE. If set to TRUE, the function will return x y coordinates that you can latter use to plot and customize the curve.
-#' @param pdf Logical; shall a pdf be saved?  Defaults to FALSE. If set to TRUE, a pdf with all will be compiled and saved to R's temp dir if no 'pdf_location' is specified.
-#' @param pdf_location Output location of pdf file
-#' @return If `plot = FALSE`, a list containing the cumulative distribution of population shares (`cum.reg`) and industry shares (`cum.out`) is returned. If `plot = TRUE`, no return value is specified.
+#' @param pdf Logical; shall a pdf be saved to your current working directory? Defaults to FALSE. If set to TRUE, a pdf with all Hoover curves will be compiled and saved to your current working directory.
 #' @keywords concentration inequality
 #' @export
 #' @examples
@@ -31,49 +29,46 @@
 #'
 #' ## run the function
 #' hoover_curve (mat, pop)
+#' hoover_curve (mat, pop, pdf = FALSE)
 #' hoover_curve (mat, pop, plot = FALSE)
 #'
 #' ## run the function by aggregating all industries
 #' hoover_curve (rowSums(mat), pop)
+#' hoover_curve (rowSums(mat), pop, pdf = FALSE)
 #' hoover_curve (rowSums(mat), pop, plot = FALSE)
 #'
 #' ## run the function for industry #1 only
 #' hoover_curve (mat[,1], pop)
+#' hoover_curve (mat[,1], pop, pdf = FALSE)
 #' hoover_curve (mat[,1], pop, plot = FALSE)
 #'
 #' ## run the function for industry #2 only (perfectly proportional to population)
 #' hoover_curve (mat[,2], pop)
+#' hoover_curve (mat[,2], pop, pdf = FALSE)
 #' hoover_curve (mat[,2], pop, plot = FALSE)
 #'
 #' ## run the function for industry #3 only (30% of the pop. produces 100% of the output)
 #' hoover_curve (mat[,3], pop)
+#' hoover_curve (mat[,3], pop, pdf = FALSE)
 #' hoover_curve (mat[,3], pop, plot = FALSE)
 #'
 #' ## run the function for industry #4 only (55% of the pop. produces 100% of the output)
 #' hoover_curve (mat[,4], pop)
+#' hoover_curve (mat[,4], pop, pdf = FALSE)
 #' hoover_curve (mat[,4], pop, plot = FALSE)
 #'
 #' ## Compare the distribution of the #industries
-#' oldpar <- par(mfrow = c(2, 2))  # Save the current graphical parameter settings
+#' par(mfrow=c(2,2))
 #' hoover_curve (mat[,1], pop)
 #' hoover_curve (mat[,2], pop)
 #' hoover_curve (mat[,3], pop)
 #' hoover_curve (mat[,4], pop)
-#' par(oldpar)  # Reset the graphical parameters to their original values
-#'
-#' ## Save output as pdf
-#' hoover_curve (mat, pop, pdf = TRUE)
-#'
-#' ## To specify an output directory for the pdf,
-#' ## specify 'pdf_location', for instance as '/Users/jones/hoover_curve.pdf'
-#' ## hoover_curve(mat, pop, pdf = TRUE, pdf_location = '/Users/jones/hoover_curve.pdf')
-#'
 #'
 #' @author Pierre-Alexandre Balland \email{p.balland@uu.nl}
 #' @seealso \code{\link{hoover_gini}}, \code{\link{locational_gini}}, \code{\link{locational_gini_curve}}, \code{\link{lorenz_curve}}, \code{\link{gini}}
 #' @references Hoover, E.M. (1936) The Measurement of Industrial Localization, \emph{The Review of Economics and Statistics} \strong{18} (1): 162-171
 
-hoover_curve <- function(mat, pop, plot = TRUE, pdf = FALSE, pdf_location = NULL) {
+hoover_curve <- function(mat, pop, plot = TRUE, pdf = FALSE) {
   if (!plot) {
     mat <- as.matrix(mat)
     ind <- c(0, mat[, 1])
@@ -123,18 +118,12 @@ hoover_curve <- function(mat, pop, plot = TRUE, pdf = FALSE, pdf_location = NULL
         hc(mat, pop, i)
       }
     } else {
-      if (!is.null(pdf_location)) {
-        pdf(pdf_location)
-        message("Hoover curve PDF saved to:", pdf_location)
-      } else {
-        pdf_location <- file.path(tempdir(), "hoover_curve.pdf")
-        pdf(pdf_location)
-        message("No 'pdf_location' specified: hoover_curve.pdf saved to R's temporary directory.")
-      }
+      pdf("hoover_curve.pdf")
       for (i in seq_len(ncol(mat))) {
         hc(mat, pop, i)
       }
       dev.off()
+      print("hoover_curve.pdf has been saved to your current working directory")
     }
   }
 }

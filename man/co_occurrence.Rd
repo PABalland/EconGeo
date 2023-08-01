@@ -13,9 +13,6 @@ co_occurrence(mat, diagonal = FALSE, list = FALSE)
 
 \item{list}{Logical; is the input a list? Defaults to FALSE (input = adjacency matrix), but can be set to TRUE if the input is an edge list}
 }
-\value{
-The co-occurrence matrix as an R matrix object.
-}
 \description{
 This function computes the number of co-occurrences between industry pairs from an incidence (industry - event) matrix
 }
